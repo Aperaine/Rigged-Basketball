@@ -1,12 +1,12 @@
 extends CharacterBody2D
 
-@export var moveSpeed:float = 200
-var moveAcceleration:float = 400
+@export var moveSpeed:float = 300
+var moveAcceleration:float = 600
 
 @export var maxPositionX = 588
 @export var minPositionX = 52
 
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	move(delta)
 	
 
