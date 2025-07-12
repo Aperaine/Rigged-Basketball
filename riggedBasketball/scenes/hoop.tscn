@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://6ahhekbmm04v"]
+
+[ext_resource type="Script" uid="uid://cbemd3ha3wtgj" path="res://scripts/hoop.gd" id="1_8ufma"]
+[ext_resource type="Texture2D" uid="uid://bnb76vb325d6u" path="res://icon.svg" id="1_kqfn8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ufma"]
+size = Vector2(57, 5)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kqfn8"]
+radius = 4.0
+height = 24.0
+
+[node name="Hoop" type="CharacterBody2D"]
+script = ExtResource("1_8ufma")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1.52588e-05, 1.52588e-05)
+scale = Vector2(0.8, 0.2)
+texture = ExtResource("1_kqfn8")
+
+[node name="Hole" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hole"]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_8ufma")
+
+[node name="Rim left" type="CollisionShape2D" parent="."]
+position = Vector2(-48, 0)
+shape = SubResource("CapsuleShape2D_kqfn8")
+
+[node name="Rim right" type="CollisionShape2D" parent="."]
+position = Vector2(48, 0)
+shape = SubResource("CapsuleShape2D_kqfn8")
