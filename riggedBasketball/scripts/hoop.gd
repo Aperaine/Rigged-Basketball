@@ -16,7 +16,6 @@ func move(delta:float):
 	activeSpeed = move_toward(activeSpeed, movement * maxSpeed, moveAcceleration)
 	
 	position.x += activeSpeed * delta
-	print (activeSpeed)
 	
 	if position.x >= maxPositionX:
 		position.x = maxPositionX
