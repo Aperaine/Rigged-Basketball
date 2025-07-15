@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://cldexln4udev1"]
+
+[ext_resource type="PackedScene" uid="uid://6ahhekbmm04v" path="res://scenes/hoop.tscn" id="1_cxlvu"]
+[ext_resource type="Texture2D" uid="uid://bnb76vb325d6u" path="res://icon.svg" id="2_f7cbr"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4dx81"]
+radius = 17.0294
+
+[node name="Ball" type="RigidBody2D"]
+
+[node name="Hoop" parent="." instance=ExtResource("1_cxlvu")]
+position = Vector2(0, 41)
+
+[node name="Sprite" type="Sprite2D" parent="."]
+scale = Vector2(0.28125, 0.28125)
+texture = ExtResource("2_f7cbr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_4dx81")
