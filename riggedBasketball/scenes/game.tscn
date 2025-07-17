@@ -9,12 +9,12 @@ distance = -418.0
 [node name="Game" type="Node2D"]
 
 [node name="Hoop" parent="." instance=ExtResource("1_uwrxv")]
-position = Vector2(320, 240)
+position = Vector2(320, 200)
 
 [node name="Ball" parent="." instance=ExtResource("2_yqjtg")]
 position = Vector2(102, 377)
 max_contacts_reported = 1
-target = Vector2(291, 132)
+target = Vector2(320, 150)
 
 [node name="Floor" type="StaticBody2D" parent="."]
 

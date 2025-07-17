@@ -25,5 +25,5 @@ func move(delta:float):
 		activeSpeed = 0
 
 
-func _on_hole_body_entered(body: RigidBody2D) -> void:
+func _on_hole_body_entered(_body: RigidBody2D) -> void:
 	print("score")
