@@ -26,8 +26,7 @@ func _physics_process(_delta: float) -> void:
 		if global_position.y < originalPos.y-arcHeight+20:
 			if firstTimer:
 				firstTimer = false
-				await get_tree().create_timer(0.3).timeout
-				physicsRelease()
+				get_tree().create_timer(0.3).timeout.connect(physicsRelease)
 
 func projectileSync() -> void:
 	global_position = projectile.position
