@@ -23,3 +23,7 @@ func move(delta:float):
 	elif position.x <= minPositionX:
 		position.x = minPositionX
 		activeSpeed = 0
+
+
+func _on_hole_body_entered(body: RigidBody2D) -> void:
+	print("score")

@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cldexln4udev1" path="res://scenes/ball.tscn" id="2_yqjtg"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_yqjtg"]
-distance = -366.0
+distance = -418.0
 
 [node name="Game" type="Node2D"]
 
@@ -12,12 +12,11 @@ distance = -366.0
 position = Vector2(320, 240)
 
 [node name="Ball" parent="." instance=ExtResource("2_yqjtg")]
-position = Vector2(174, 120)
-collision_mask = 1
+position = Vector2(102, 377)
 max_contacts_reported = 1
 target = Vector2(291, 132)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="Floor" type="StaticBody2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
 shape = SubResource("WorldBoundaryShape2D_yqjtg")

@@ -3,40 +3,32 @@ extends RigidBody2D
 @onready var projectile: ProjectileOnCurve2D = $ProjectileOnCurve2D
 @onready var originalPos:Vector2 = position
 @export var target:Vector2
-@export var speed:int = 2
-var arcHeight:int = 200
+@export var speed:int = 4
+@export var arcHeight:int = 100
 var syncProjectile:bool = false
 
-@onready var frozenposition = position
-func _physics_process(delta: float) -> void:
-	## for testing
-	if Input.is_action_just_pressed("moveRight"):
-		syncProjectile = true
-		projectile.move()
-		projectile.launch(originalPos, target, arcHeight, speed)
+func _ready() -> void:
+	position = target
+	freeze = true
+	projectile.launch(originalPos,target,arcHeight,speed)
+	syncProjectile = true
+
+
+#func _on_body_entered(body: Node) -> void:
 	
-	if Input.is_action_just_pressed("moveLeft"):
-		syncProjectile = false
-		set_physics_process(true)
-	
+
+func _physics_process(_delta: float) -> void:
 	if syncProjectile:
-		freeze = true
-		#position = projectile.position
-		#rotation = projectile.rotation
-		position = Vector2(0,0)
-		print("setting position")
-		var frozenposition = position 
-		print(frozenposition)
-	else:
-		print(frozenposition)
-		freeze = false
-		if frozenposition != originalPos:
-			position = frozenposition
-		
-		print("not setting position")
+		projectileSync()
+	
+	if Input.is_action_just_pressed("DEBUG1"):
+		physicsRelease()
 
+func projectileSync() -> void:
+	global_position = projectile.position
+	global_rotation = projectile.rotation
 
-func _on_body_entered(_body: Node) -> void:
-	#print("enter")
+func physicsRelease():
 	syncProjectile = false
 	projectile.stop()
+	freeze = false

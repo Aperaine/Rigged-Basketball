@@ -11,7 +11,6 @@ radius = 4.0
 height = 24.0
 
 [node name="Hoop" type="StaticBody2D"]
-collision_layer = 8
 script = ExtResource("1_8ufma")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -32,3 +31,5 @@ shape = SubResource("CapsuleShape2D_kqfn8")
 [node name="Rim right" type="CollisionShape2D" parent="."]
 position = Vector2(48, 0)
 shape = SubResource("CapsuleShape2D_kqfn8")
+
+[connection signal="body_entered" from="Hole" to="." method="_on_hole_body_entered"]
