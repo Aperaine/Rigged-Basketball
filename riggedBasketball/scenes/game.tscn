@@ -12,7 +12,9 @@ distance = -366.0
 position = Vector2(320, 240)
 
 [node name="Ball" parent="." instance=ExtResource("2_yqjtg")]
-position = Vector2(112, 327)
+position = Vector2(174, 120)
+collision_mask = 1
+max_contacts_reported = 1
 target = Vector2(291, 132)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]

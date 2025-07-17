@@ -11,6 +11,7 @@ radius = 4.0
 height = 24.0
 
 [node name="Hoop" type="StaticBody2D"]
+collision_layer = 8
 script = ExtResource("1_8ufma")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
