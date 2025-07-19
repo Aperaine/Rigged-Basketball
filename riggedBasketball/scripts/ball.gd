@@ -23,10 +23,10 @@ func _physics_process(_delta: float) -> void:
 	if syncProjectile:
 		projectileSync()
 		
-		if global_position.y < originalPos.y-arcHeight+20:
+		if global_position.y < originalPos.y-arcHeight+40:
 			if firstTimer:
 				firstTimer = false
-				get_tree().create_timer(0.3).timeout.connect(physicsRelease)
+				get_tree().create_timer(0.4).timeout.connect(physicsRelease)
 
 func projectileSync() -> void:
 	global_position = projectile.position
@@ -34,6 +34,7 @@ func projectileSync() -> void:
 	
 
 func physicsRelease():
+	$CollisionShape2D.disabled = false
 	syncProjectile = false
 	projectile.stop()
 	freeze = false

@@ -22,6 +22,7 @@ texture = ExtResource("2_f7cbr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_4dx81")
+disabled = true
 
 [node name="ProjectileOnCurve2D" type="Node2D" parent="."]
 script = ExtResource("3_f7cbr")
