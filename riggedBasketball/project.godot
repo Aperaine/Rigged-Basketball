@@ -24,6 +24,7 @@ window/size/resizable=false
 [editor]
 
 movie_writer/movie_file="/Users/gadi/Movies/riggedbasketball.avi"
+movie_writer/fps=120
 
 [editor_plugins]
 
