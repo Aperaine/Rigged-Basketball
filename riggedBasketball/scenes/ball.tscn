@@ -28,5 +28,3 @@ disabled = true
 [node name="ProjectileOnCurve2D" type="Node2D" parent="."]
 script = ExtResource("3_f7cbr")
 metadata/_custom_type_script = "uid://bdnl6uuwlfjme"
-
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]

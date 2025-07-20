@@ -19,9 +19,6 @@ func _ready() -> void:
 	syncProjectile = true
 
 
-#func _on_body_entered(body: Node) -> void:
-	#print(body.name)
-
 func _physics_process(_delta: float) -> void:
 	if syncProjectile:
 		projectileSync()
