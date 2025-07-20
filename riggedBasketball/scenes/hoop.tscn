@@ -19,6 +19,7 @@ scale = Vector2(0.8, 0.2)
 texture = ExtResource("1_kqfn8")
 
 [node name="Hole" type="Area2D" parent="."]
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hole"]
 position = Vector2(0, 5)

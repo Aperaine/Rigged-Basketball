@@ -38,5 +38,8 @@ func physicsRelease():
 	syncProjectile = false
 	projectile.stop()
 	freeze = false
+	
 	linear_velocity.y = 300
 	linear_velocity.x = target.x - originalPos.x
+	
+	set_physics_process(false)

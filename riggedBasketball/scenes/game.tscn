@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://f02l7av0c05v"]
+[gd_scene load_steps=6 format=3 uid="uid://f02l7av0c05v"]
 
 [ext_resource type="PackedScene" uid="uid://6ahhekbmm04v" path="res://scenes/hoop.tscn" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://cldexln4udev1" path="res://scenes/ball.tscn" id="2_yqjtg"]
+[ext_resource type="Script" uid="uid://fwmcmmni5p5v" path="res://scenes/thrower.gd" id="3_lbhrr"]
 [ext_resource type="Texture2D" uid="uid://bnb76vb325d6u" path="res://icon.svg" id="3_lnu2h"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_yqjtg"]
@@ -13,9 +14,9 @@ distance = -418.0
 position = Vector2(320, 150)
 
 [node name="Ball" parent="." instance=ExtResource("2_yqjtg")]
-position = Vector2(102, 312)
+position = Vector2(26, 440)
 max_contacts_reported = 1
-target = Vector2(320, 100)
+target = Vector2(615, 100)
 
 [node name="Floor" type="StaticBody2D" parent="."]
 
@@ -25,9 +26,10 @@ shape = SubResource("WorldBoundaryShape2D_yqjtg")
 
 [node name="Thrower" type="Node2D" parent="."]
 position = Vector2(320, 406)
+script = ExtResource("3_lbhrr")
 
 [node name="Icon" type="Sprite2D" parent="Thrower"]
 position = Vector2(0, -3.8147e-06)
-scale = Vector2(0.359375, 0.648437)
+scale = Vector2(0.296875, 0.53125)
 texture = ExtResource("3_lnu2h")
 metadata/_edit_lock_ = true
