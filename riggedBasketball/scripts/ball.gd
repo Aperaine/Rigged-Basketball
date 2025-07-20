@@ -9,6 +9,9 @@ var syncProjectile:bool = false
 
 var firstTimer: bool = true
 
+var yBeforePos:float
+var yAfterPos:float
+
 func _ready() -> void:
 	freeze = true
 	speed = round(abs(originalPos.x-target.x)/220 + 2)
@@ -23,15 +26,14 @@ func _physics_process(_delta: float) -> void:
 	if syncProjectile:
 		projectileSync()
 		
-		if global_position.y < originalPos.y-arcHeight+40:
-			if firstTimer:
-				firstTimer = false
-				get_tree().create_timer(0.4).timeout.connect(physicsRelease)
+		if yBeforePos < yAfterPos:
+			physicsRelease()
 
 func projectileSync() -> void:
+	yBeforePos = global_position.y
 	global_position = projectile.position
 	global_rotation = projectile.rotation
-	
+	yAfterPos = global_position.y
 
 func physicsRelease():
 	$CollisionShape2D.disabled = false
@@ -39,7 +41,6 @@ func physicsRelease():
 	projectile.stop()
 	freeze = false
 	
-	linear_velocity.y = 300
-	linear_velocity.x = target.x - originalPos.x
+	linear_velocity.x = (target.x - originalPos.x)/1.4
 	
 	set_physics_process(false)

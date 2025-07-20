@@ -14,9 +14,9 @@ distance = -418.0
 position = Vector2(320, 150)
 
 [node name="Ball" parent="." instance=ExtResource("2_yqjtg")]
-position = Vector2(26, 440)
+position = Vector2(45, 406)
 max_contacts_reported = 1
-target = Vector2(615, 100)
+target = Vector2(610, 100)
 
 [node name="Floor" type="StaticBody2D" parent="."]
 
