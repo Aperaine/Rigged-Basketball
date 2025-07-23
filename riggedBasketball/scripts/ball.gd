@@ -1,20 +1,23 @@
 extends RigidBody2D
 
 @onready var projectile: ProjectileOnCurve2D = $ProjectileOnCurve2D
-@onready var originalPos:Vector2 = position
+@export var originalPos:Vector2
 @export var target:Vector2
-@export var speed:int
-var arcHeight:int = 300
+var speed:int
+var arcHeight:int = 400
 var syncProjectile:bool = false
 
-var firstTimer: bool = true
+var firstTime: bool = true
 
 var yBeforePos:float
 var yAfterPos:float
 
 func _ready() -> void:
 	freeze = true
-	speed = round(abs(originalPos.x-target.x)/220 + 2)
+	
+	$Sprite.rotation_degrees = round(randf_range(0,360))
+	
+	speed = round(abs(originalPos.x-target.x)/220 + 4)
 	projectile.launch(originalPos,target,arcHeight,speed)
 	syncProjectile = true
 
@@ -23,8 +26,10 @@ func _physics_process(_delta: float) -> void:
 	if syncProjectile:
 		projectileSync()
 		
-		if yBeforePos < yAfterPos:
+		if yBeforePos < yAfterPos && !firstTime:
 			physicsRelease()
+		else:
+			firstTime = false
 
 func projectileSync() -> void:
 	yBeforePos = global_position.y
