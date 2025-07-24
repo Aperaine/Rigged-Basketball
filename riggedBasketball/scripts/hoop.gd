@@ -1,14 +1,17 @@
 extends StaticBody2D
 
+@onready var game: Node2D = $".."
+
 @export var maxSpeed:int = 500
 var activeSpeed:float = 0
-@export var moveAcceleration:float = 10
+@export var moveAcceleration:float = 20
 
 @export var maxPositionX = 588
 @export var minPositionX = 52
 
 func _process(delta: float) -> void:
-	move(delta)
+	if game.active:
+		move(delta)
 	
 
 func move(delta:float):
@@ -26,5 +29,6 @@ func move(delta:float):
 
 
 func _on_hole_body_entered(body: RigidBody2D) -> void:
-	print("score")
+	game.addScore()
 	body.set_collision_layer_value(2,false)
+	body.scored = true
