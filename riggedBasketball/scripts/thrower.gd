@@ -13,10 +13,10 @@ var rng = RandomNumberGenerator.new()
 
 @export_category("Timers")
 @export var startingDelay: int = 2
-@export var timeBetweenThrows:float = 4
+@export var timeBetweenThrows:float = 3
 @export var minimumTimeBetweenThrows:int = 1
 
-var ballScene = preload("res://scenes/ball.tscn")
+const ballScene = preload("res://scenes/ball.tscn")
 @onready var ballsCollection: Node = $"../Balls"
 var ballCount:int = 0
 
