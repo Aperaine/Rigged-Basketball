@@ -28,7 +28,9 @@ func _ready() -> void:
 	while active:
 		throw()
 		await get_tree().create_timer(timeBetweenThrows).timeout
-		
+		if ballCount % 2 == 0 && timeBetweenThrows > minimumTimeBetweenThrows:
+			timeBetweenThrows -= 0.1
+			print("Tiem between throws: ", timeBetweenThrows)
 
 func throw() -> void:
 	ballCount += 1
