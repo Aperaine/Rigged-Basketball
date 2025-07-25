@@ -42,5 +42,6 @@ func throw() -> void:
 	
 	var ball = ballScene.instantiate()
 	ball.target = target
+	ball.position = position
 	ball.originalPos = position
 	ballsCollection.add_child(ball)

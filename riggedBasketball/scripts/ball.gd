@@ -21,6 +21,7 @@ func _ready() -> void:
 	speed = round(abs(originalPos.x-target.x)/220 + 4.2)
 	projectile.launch(originalPos,target,arcHeight,speed)
 	syncProjectile = true
+	visible = true
 
 
 func _physics_process(_delta: float) -> void:
