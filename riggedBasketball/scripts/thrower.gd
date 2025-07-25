@@ -3,8 +3,8 @@ extends Node2D
 @export var active:bool
 
 @export_category("Locations")
-@export var targetBoundaryL:Vector2 = Vector2(40,100)
-@export var targetBoundaryR:Vector2 = Vector2(600,150)
+@export var targetBoundaryL:Vector2 = Vector2(40,150)
+@export var targetBoundaryR:Vector2 = Vector2(600,200)
 @export var throwBoundaryL:int = 20
 @export var throwBoundaryR:int = 620
 var target:Vector2
@@ -20,6 +20,8 @@ const ballScene = preload("res://scenes/ball.tscn")
 @onready var ballsCollection: Node = $"../Balls"
 var ballCount:int = 0
 
+var ballSpeed = 3
+
 func _ready() -> void:
 	active = true
 	rng.randomize()
@@ -27,10 +29,13 @@ func _ready() -> void:
 	await get_tree().create_timer(startingDelay).timeout
 	while active:
 		throw()
-		await get_tree().create_timer(timeBetweenThrows).timeout
+		
 		if ballCount % 2 == 0 && timeBetweenThrows > minimumTimeBetweenThrows:
 			timeBetweenThrows -= 0.1
+			ballSpeed += 0.1
 			print("Tiem between throws: ", timeBetweenThrows)
+		
+		await get_tree().create_timer(timeBetweenThrows).timeout
 
 func throw() -> void:
 	ballCount += 1
@@ -44,4 +49,5 @@ func throw() -> void:
 	ball.target = target
 	ball.position = position
 	ball.originalPos = position
+	ball.speed = ballSpeed
 	ballsCollection.add_child(ball)

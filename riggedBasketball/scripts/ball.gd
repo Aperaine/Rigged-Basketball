@@ -4,8 +4,8 @@ extends RigidBody2D
 @export var originalPos:Vector2
 @export var target:Vector2
 @export var scored:bool = false
-var speed:int
-var arcHeight:int = 400
+@export var speed:float = 3
+var arcHeight:int = 500
 var syncProjectile:bool = false
 
 var firstTime: bool = true
@@ -18,7 +18,7 @@ func _ready() -> void:
 	z_index = 1
 	$Sprite.rotation_degrees = round(randf_range(0,360))
 	
-	speed = round(abs(originalPos.x-target.x)/220 + 4.2)
+	speed = abs(originalPos.x-target.x)/220 + speed
 	projectile.launch(originalPos,target,arcHeight,speed)
 	syncProjectile = true
 	visible = true

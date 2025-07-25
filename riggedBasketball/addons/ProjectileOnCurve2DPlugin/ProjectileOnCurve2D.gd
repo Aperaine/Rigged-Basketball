@@ -2,7 +2,7 @@ extends Node2D
 class_name ProjectileOnCurve2D
 
 # movement per pixel
-const _SPEED: int = 100
+const _SPEED: float = 100
 var _startPos: Vector2
 var _endPos: Vector2
 var _control: Vector2
@@ -10,7 +10,7 @@ var _control: Vector2
 var _traveledTime: float = 0.0
 var _duration: float
 var _inv_duration: float
-var _speed: int = 1
+var _speed: float = 1
 
 
 func move() -> void:
@@ -21,7 +21,7 @@ func stop() -> void:
 	set_physics_process(false)
 
 
-func launch(startPos: Vector2, targetPos: Vector2, arcHeight: int, speed: int = 1) -> void:
+func launch(startPos: Vector2, targetPos: Vector2, arcHeight: int, speed: float = 1) -> void:
 	_startPos = startPos
 	_endPos = targetPos
 	_speed = speed

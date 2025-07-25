@@ -12,7 +12,7 @@
 script = ExtResource("1_iywne")
 
 [node name="Hoop" parent="." instance=ExtResource("1_uwrxv")]
-position = Vector2(320, 150)
+position = Vector2(320, 209)
 maxSpeed = 600
 
 [node name="Floor" type="Area2D" parent="."]

@@ -12,6 +12,7 @@ radius = 4.0
 height = 24.0
 
 [node name="Hoop" type="StaticBody2D"]
+scale = Vector2(0.8, 0.8)
 script = ExtResource("1_8ufma")
 
 [node name="Backboard" type="Sprite2D" parent="."]
