@@ -18,7 +18,7 @@ func _ready() -> void:
 	z_index = 1
 	$Sprite.rotation_degrees = round(randf_range(0,360))
 	
-	speed = round(abs(originalPos.x-target.x)/220 + 4)
+	speed = round(abs(originalPos.x-target.x)/220 + 4.2)
 	projectile.launch(originalPos,target,arcHeight,speed)
 	syncProjectile = true
 
