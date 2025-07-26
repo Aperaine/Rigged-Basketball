@@ -9,7 +9,9 @@ var activeSpeed:float = 0
 @export var maxPositionX = 588
 @export var minPositionX = 52
 
+
 func _process(delta: float) -> void:
+	
 	if game.active:
 		move(delta)
 	
