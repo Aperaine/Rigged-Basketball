@@ -13,7 +13,6 @@ height = 24.0
 
 [node name="Hoop" type="StaticBody2D"]
 scale = Vector2(0.8, 0.8)
-collision_layer = 0
 script = ExtResource("1_8ufma")
 
 [node name="Backboard" type="Sprite2D" parent="."]
@@ -35,11 +34,11 @@ position = Vector2(0, 5)
 shape = SubResource("RectangleShape2D_8ufma")
 
 [node name="Rim left" type="CollisionShape2D" parent="."]
-position = Vector2(-50, 3.75)
+position = Vector2(-50, 4.76837e-07)
 shape = SubResource("CapsuleShape2D_kqfn8")
 
 [node name="Rim right" type="CollisionShape2D" parent="."]
-position = Vector2(48, 2.5)
+position = Vector2(48.75, 2.38419e-07)
 shape = SubResource("CapsuleShape2D_kqfn8")
 
 [connection signal="body_entered" from="Hole" to="." method="_on_hole_body_entered"]

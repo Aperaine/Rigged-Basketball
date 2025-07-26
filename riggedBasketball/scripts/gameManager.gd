@@ -5,6 +5,7 @@ var score:int = 0
 
 func _ready() -> void:
 	active = true
+	$Hoop.active = true
 
 
 ## Add an amount to the score
