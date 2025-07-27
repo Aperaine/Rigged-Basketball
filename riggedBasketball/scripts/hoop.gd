@@ -2,9 +2,9 @@ extends StaticBody2D
 
 @onready var game: Node2D = $".."
 
-@export var maxSpeed:int = 500
+@export var maxSpeed:int = 700
 var activeSpeed:float = 0
-@export var moveAcceleration:float = 20
+@export var moveAcceleration:float = 50
 
 @export var maxPositionX = 588
 @export var minPositionX = 52
