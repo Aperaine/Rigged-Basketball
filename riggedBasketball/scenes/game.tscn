@@ -12,7 +12,7 @@
 script = ExtResource("1_iywne")
 
 [node name="Hoop" parent="." instance=ExtResource("1_uwrxv")]
-position = Vector2(320, 209)
+position = Vector2(320, 210)
 maxSpeed = 600
 
 [node name="Floor" type="Area2D" parent="."]
@@ -33,5 +33,10 @@ texture = ExtResource("3_lnu2h")
 metadata/_edit_lock_ = true
 
 [node name="Balls" type="Node" parent="."]
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(320, 240)
+
+[node name="Camera2D" type="Camera2D" parent="Node2D"]
 
 [connection signal="body_entered" from="Floor" to="Floor" method="_on_body_entered"]
