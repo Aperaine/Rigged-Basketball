@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://utkdveyv6pql" path="res://scripts/floor.gd" id="2_lbhrr"]
 [ext_resource type="Script" uid="uid://fwmcmmni5p5v" path="res://scripts/thrower.gd" id="3_lbhrr"]
 [ext_resource type="Texture2D" uid="uid://bnb76vb325d6u" path="res://icon.svg" id="3_lnu2h"]
-[ext_resource type="Texture2D" uid="uid://6biwxdvjrhrl" path="res://assets/Rigged Basketball Background.svg" id="6_p57ef"]
+[ext_resource type="Texture2D" uid="uid://bppse4h3oedsf" path="res://assets/Background.png" id="6_p57ef"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_yqjtg"]
 

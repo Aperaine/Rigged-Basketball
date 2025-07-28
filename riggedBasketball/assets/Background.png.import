@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://6biwxdvjrhrl"
-path="res://.godot/imported/Rigged Basketball Background.svg-63492438b1afddde5dc1e3d8e93f6019.ctex"
+uid="uid://bppse4h3oedsf"
+path="res://.godot/imported/Background.png-6d72d35f07f42b3845e8764c552bb4fb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Rigged Basketball Background.svg"
-dest_files=["res://.godot/imported/Rigged Basketball Background.svg-63492438b1afddde5dc1e3d8e93f6019.ctex"]
+source_file="res://assets/Background.png"
+dest_files=["res://.godot/imported/Background.png-6d72d35f07f42b3845e8764c552bb4fb.ctex"]
 
 [params]
 
@@ -32,6 +32,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false
