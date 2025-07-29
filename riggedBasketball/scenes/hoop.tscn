@@ -30,7 +30,7 @@ texture = ExtResource("2_8ufma")
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hole"]
-position = Vector2(0, 5)
+position = Vector2(0, 33.75)
 shape = SubResource("RectangleShape2D_8ufma")
 
 [node name="Rim left" type="CollisionShape2D" parent="."]

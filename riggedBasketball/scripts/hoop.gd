@@ -15,6 +15,8 @@ func _process(delta: float) -> void:
 	if game.active:
 		move(delta)
 	
+	if Input.is_action_just_pressed("DEBUG1"):
+		get_tree().reload_current_scene()
 
 func move(delta:float):
 	var movement = Input.get_axis("moveLeft","moveRight")

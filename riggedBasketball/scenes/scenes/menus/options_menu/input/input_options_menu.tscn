@@ -6,6 +6,26 @@
 [node name="Controls" instance=ExtResource("1_7pp6d")]
 script = ExtResource("2_0afnv")
 
+[node name="InputIconMapper" parent="." index="0"]
+prioritized_strings = Array[String](["color"])
+replace_strings = {
+"Capslock": "Caps Lock",
+"Generic Stick": "Generic Left Stick",
+"Guide": "Home",
+"Slash Back": "Back Slash",
+"Slash Forward": "Slash",
+"Stick L": "Left Stick",
+"Stick R": "Right Stick",
+"Trigger L 1": "Left Shoulder",
+"Trigger L 2": "Left Trigger",
+"Trigger R 1": "Right Shoulder",
+"Trigger R 2": "Right Trigger"
+}
+filtered_strings = Array[String](["keyboard", "color", "button", "arrow"])
+directories = Array[String](["res://assets/kenney_input-prompts/Keyboard & Mouse/Vector", "res://assets/kenney_input-prompts/Generic/Vector", "res://assets/kenney_input-prompts/Xbox Series/Vector", "res://assets/kenney_input-prompts/PlayStation Series/Vector", "res://assets/kenney_input-prompts/Nintendo Switch/Vector", "res://assets/kenney_input-prompts/Steam Deck/Vector"])
+ends_with = ".svg"
+not_ends_with = "outline.svg"
+
 [node name="InputActionsList" parent="VBoxContainer/InputMappingContainer" index="1"]
 custom_minimum_size = Vector2(560, 350)
 action_groups = 4
