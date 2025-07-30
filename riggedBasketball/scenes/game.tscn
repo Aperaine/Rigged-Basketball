@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://f02l7av0c05v"]
+[gd_scene load_steps=12 format=3 uid="uid://f02l7av0c05v"]
 
 [ext_resource type="Script" uid="uid://cc0p80mibgo6r" path="res://scripts/gameManager.gd" id="1_iywne"]
 [ext_resource type="PackedScene" uid="uid://6ahhekbmm04v" path="res://scenes/hoop.tscn" id="1_uwrxv"]
@@ -6,6 +6,10 @@
 [ext_resource type="Script" uid="uid://fwmcmmni5p5v" path="res://scripts/thrower.gd" id="3_lbhrr"]
 [ext_resource type="Texture2D" uid="uid://bnb76vb325d6u" path="res://icon.svg" id="3_lnu2h"]
 [ext_resource type="Texture2D" uid="uid://bppse4h3oedsf" path="res://assets/Background.png" id="6_p57ef"]
+[ext_resource type="Texture2D" uid="uid://biuji8iqevysa" path="res://assets/Mark_Left_Key_Dark.png" id="7_gee14"]
+[ext_resource type="Texture2D" uid="uid://4kjjlb6kn3t" path="res://assets/Mark_Right_Key_Dark.png" id="8_0tnpc"]
+[ext_resource type="Texture2D" uid="uid://bkntrs505a4rl" path="res://assets/Mark_Left_Key_Light.png" id="8_vtaks"]
+[ext_resource type="Texture2D" uid="uid://cqeqcvguad7b5" path="res://assets/Mark_Right_Key_Light.png" id="10_kvpfn"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_yqjtg"]
 
@@ -45,10 +49,19 @@ z_index = -5
 position = Vector2(320, 240)
 texture = ExtResource("6_p57ef")
 
-[node name="Touch Screen" type="CanvasLayer" parent="."]
+[node name="UI" type="CanvasLayer" parent="."]
 
-[node name="Left" type="Control" parent="Touch Screen"]
+[node name="Touch screen" type="Control" parent="UI"]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Left" type="Control" parent="UI/Touch screen"]
+layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
@@ -56,14 +69,16 @@ offset_top = -40.0
 offset_right = 40.0
 grow_vertical = 0
 
-[node name="TouchScreenButton" type="TouchScreenButton" parent="Touch Screen/Left"]
-position = Vector2(0, -88)
-texture_normal = ExtResource("3_lnu2h")
+[node name="TouchScreenButton" type="TouchScreenButton" parent="UI/Touch screen/Left"]
+position = Vector2(0, -184)
+scale = Vector2(2.56, 2.24)
+texture_normal = ExtResource("7_gee14")
+texture_pressed = ExtResource("8_vtaks")
 action = "moveLeft"
 visibility_mode = 1
 
-[node name="Right" type="Control" parent="Touch Screen"]
-layout_mode = 3
+[node name="Right" type="Control" parent="UI/Touch screen"]
+layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
@@ -74,9 +89,11 @@ offset_top = -40.0
 grow_horizontal = 0
 grow_vertical = 0
 
-[node name="TouchScreenButton" type="TouchScreenButton" parent="Touch Screen/Right"]
-position = Vector2(-88, -88)
-texture_normal = ExtResource("3_lnu2h")
+[node name="TouchScreenButton" type="TouchScreenButton" parent="UI/Touch screen/Right"]
+position = Vector2(-216, -184)
+scale = Vector2(2.56, 2.24)
+texture_normal = ExtResource("8_0tnpc")
+texture_pressed = ExtResource("10_kvpfn")
 action = "moveRight"
 visibility_mode = 1
 

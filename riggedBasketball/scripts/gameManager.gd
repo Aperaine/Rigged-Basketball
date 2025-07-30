@@ -3,9 +3,14 @@ extends Node2D
 var score:int = 0
 @export var active:bool = false
 
+@onready var touch_screen: Control = $"UI/Touch screen"
+
+
 func _ready() -> void:
 	active = true
 	RenderingServer.set_default_clear_color(Color("000000"))
+	
+	touch_screen.modulate.a = Config.get_config(AppSettings.INPUT_SECTION,"TouchButtonsOpacity", 3) / 7
 
 
 ## Add an amount to the score

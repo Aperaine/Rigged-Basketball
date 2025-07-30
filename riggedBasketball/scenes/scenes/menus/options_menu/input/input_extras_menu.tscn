@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dvnhi65gmcqw4"]
 
-[ext_resource type="Script" path="res://addons/maaacks_menus_template/base/scripts/capture_focus.gd" id="1_goga1"]
-[ext_resource type="PackedScene" path="res://addons/maaacks_menus_template/base/scenes/menus/options_menu/option_control/slider_option_control.tscn" id="2_iyvrj"]
+[ext_resource type="Script" uid="uid://1nf36h0gms3q" path="res://addons/maaacks_menus_template/base/scripts/capture_focus.gd" id="1_goga1"]
+[ext_resource type="PackedScene" uid="uid://cl416gdb1fgwr" path="res://addons/maaacks_menus_template/base/scenes/menus/options_menu/option_control/slider_option_control.tscn" id="2_iyvrj"]
 
 [node name="Inputs" type="MarginContainer"]
 anchors_preset = 15
@@ -34,9 +34,7 @@ alignment = 1
 [node name="MouseSensitivityControl" parent="VBoxContainer/MarginContainer/VBoxContainer" instance=ExtResource("2_iyvrj")]
 layout_mode = 2
 option_name = "Mouse Sensitivity"
-option_section = 1
 key = "MouseSensitivity"
-section = "InputSettings"
 
 [node name="OptionLabel" parent="VBoxContainer/MarginContainer/VBoxContainer/MouseSensitivityControl" index="0"]
 text = "Mouse Sensitivity :"
@@ -61,5 +59,23 @@ min_value = 0.25
 max_value = 2.0
 tick_count = 8
 
+[node name="JoypadSensitivityControl2" parent="VBoxContainer/MarginContainer/VBoxContainer" instance=ExtResource("2_iyvrj")]
+layout_mode = 2
+option_name = "Touch buttons opacity"
+option_section = 1
+key = "TouchButtonsOpacity"
+section = "InputSettings"
+default_value = 3.0
+
+[node name="OptionLabel" parent="VBoxContainer/MarginContainer/VBoxContainer/JoypadSensitivityControl2" index="0"]
+text = "Touch buttons opacity :"
+
+[node name="HSlider" parent="VBoxContainer/MarginContainer/VBoxContainer/JoypadSensitivityControl2" index="1"]
+max_value = 7.0
+step = 1.0
+value = 3.0
+tick_count = 8
+
 [editable path="VBoxContainer/MarginContainer/VBoxContainer/MouseSensitivityControl"]
 [editable path="VBoxContainer/MarginContainer/VBoxContainer/JoypadSensitivityControl"]
+[editable path="VBoxContainer/MarginContainer/VBoxContainer/JoypadSensitivityControl2"]
