@@ -92,10 +92,6 @@ DEBUG2={
 ]
 }
 
-[input_devices]
-
-pointing/emulate_touch_from_mouse=true
-
 [internationalization]
 
 locale/translations=PackedStringArray("res://addons/maaacks_menus_template/base/translations/menus_translations.en.translation", "res://addons/maaacks_menus_template/base/translations/menus_translations.fr.translation")
