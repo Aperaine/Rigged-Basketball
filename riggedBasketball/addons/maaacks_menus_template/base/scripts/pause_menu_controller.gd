@@ -5,6 +5,8 @@ extends Node
 @export var pause_menu_packed : PackedScene
 @export var focused_viewport : Viewport
 
+signal unpaused
+
 func _unhandled_input(event : InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
 		if not focused_viewport:
@@ -13,5 +15,6 @@ func _unhandled_input(event : InputEvent) -> void:
 		var current_menu = pause_menu_packed.instantiate()
 		get_parent().call_deferred("add_child", current_menu)
 		await current_menu.tree_exited
+		emit_signal("unpaused")
 		if is_inside_tree() and _initial_focus_control:
 			_initial_focus_control.grab_focus()

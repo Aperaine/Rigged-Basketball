@@ -15,6 +15,8 @@ var rng = RandomNumberGenerator.new()
 @export var startingDelay: int = 2
 @export var timeBetweenThrows:float = 3
 @export var minimumTimeBetweenThrows:int = 1
+@onready var timer: Timer = $Timer
+
 
 const ballScene = preload("res://scenes/ball.tscn")
 @onready var ballsCollection: Node = $"../Balls"
@@ -23,10 +25,11 @@ var ballCount:int = 0
 var ballSpeed = 3
 
 func _ready() -> void:
+	set_process(false)
 	active = true
 	rng.randomize()
 	
-	await get_tree().create_timer(startingDelay).timeout
+	await awaitTimer(startingDelay)
 	while active:
 		throw()
 		
@@ -38,7 +41,7 @@ func _ready() -> void:
 				timeBetweenThrows -= 0.1
 				print("Time between throws: ", timeBetweenThrows)
 		
-		await get_tree().create_timer(timeBetweenThrows).timeout
+		await awaitTimer(timeBetweenThrows)
 
 func throw() -> void:
 	ballCount += 1
@@ -54,3 +57,19 @@ func throw() -> void:
 	ball.originalPos = position
 	ball.speed = ballSpeed
 	ballsCollection.add_child(ball)
+
+func awaitTimer(length:float):
+	timer.start(length)
+	set_process(true)
+	await timer.timeout
+	set_process(false)
+	return
+
+func _process(delta: float) -> void:
+	match timer.is_stopped():
+		false:
+			if get_viewport().gui_get_focus_owner():
+				timer.set_paused(true)
+				await %"Pause Menu".unpaused
+				timer.set_paused(false)
+				print("unpaused")
