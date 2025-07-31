@@ -30,10 +30,13 @@ func _ready() -> void:
 	while active:
 		throw()
 		
-		if ballCount % 2 == 0 && timeBetweenThrows > minimumTimeBetweenThrows:
-			timeBetweenThrows -= 0.1
+		if ballCount % 2 == 0:
 			ballSpeed += 0.1
-			print("Tiem between throws: ", timeBetweenThrows)
+			print("Ball speed: ", ballSpeed)
+			
+			if timeBetweenThrows > minimumTimeBetweenThrows:
+				timeBetweenThrows -= 0.1
+				print("Time between throws: ", timeBetweenThrows)
 		
 		await get_tree().create_timer(timeBetweenThrows).timeout
 

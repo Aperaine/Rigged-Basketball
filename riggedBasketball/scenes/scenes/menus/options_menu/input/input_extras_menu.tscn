@@ -73,7 +73,7 @@ text = "Touch buttons opacity :"
 [node name="HSlider" parent="VBoxContainer/MarginContainer/VBoxContainer/JoypadSensitivityControl2" index="1"]
 max_value = 7.0
 step = 1.0
-value = 3.0
+value = 5.0
 tick_count = 8
 
 [editable path="VBoxContainer/MarginContainer/VBoxContainer/MouseSensitivityControl"]
