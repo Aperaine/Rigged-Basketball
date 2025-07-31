@@ -13,6 +13,7 @@ var firstTime: bool = true
 var yBeforePos:float
 var yAfterPos:float
 
+
 func _ready() -> void:
 	freeze = true
 	z_index = 1
@@ -22,6 +23,12 @@ func _ready() -> void:
 	projectile.launch(originalPos,target,arcHeight,speed)
 	syncProjectile = true
 	visible = true
+	
+	var tween = self.create_tween()
+	
+	var spriteSize = randf_range(0.1,0.3)
+	$Sprite.scale = Vector2(spriteSize, spriteSize)
+	tween.tween_property($Sprite, "scale", Vector2(0.1,0.1), 0.7)
 
 
 func _physics_process(_delta: float) -> void:
@@ -50,3 +57,7 @@ func physicsRelease():
 	
 	set_physics_process(false)
 	z_index = -1
+
+func missed():
+	var tween = self.create_tween()
+	tween.tween_property($Sprite, "modulate", Color.RED, 0.1)

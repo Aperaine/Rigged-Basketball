@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://f02l7av0c05v"]
+[gd_scene load_steps=15 format=3 uid="uid://f02l7av0c05v"]
 
 [ext_resource type="Script" uid="uid://cc0p80mibgo6r" path="res://scripts/gameManager.gd" id="1_iywne"]
 [ext_resource type="PackedScene" uid="uid://6ahhekbmm04v" path="res://scenes/hoop.tscn" id="1_uwrxv"]
@@ -15,6 +15,8 @@
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_yqjtg"]
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_dinhu"]
+
 [node name="Game" type="Node2D"]
 script = ExtResource("1_iywne")
 
@@ -24,10 +26,17 @@ maxSpeed = 600
 
 [node name="Floor" type="Area2D" parent="."]
 position = Vector2(0, 550)
+priority = 1
 script = ExtResource("2_lbhrr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
 shape = SubResource("WorldBoundaryShape2D_yqjtg")
+
+[node name="OutDetector" type="Area2D" parent="."]
+position = Vector2(0, 256)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OutDetector"]
+shape = SubResource("WorldBoundaryShape2D_dinhu")
 
 [node name="Thrower" type="Node2D" parent="."]
 position = Vector2(320, 574)
@@ -45,10 +54,10 @@ one_shot = true
 
 [node name="Balls" type="Node" parent="."]
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="Camera Centerer" type="Node2D" parent="."]
 position = Vector2(320, 240)
 
-[node name="Camera2D" type="Camera2D" parent="Node2D"]
+[node name="Camera2D" type="Camera2D" parent="Camera Centerer"]
 
 [node name="RiggedBasketballBackground" type="Sprite2D" parent="."]
 z_index = -5
@@ -109,3 +118,4 @@ script = ExtResource("11_dinhu")
 pause_menu_packed = ExtResource("12_kvuet")
 
 [connection signal="body_entered" from="Floor" to="Floor" method="_on_body_entered"]
+[connection signal="body_entered" from="OutDetector" to="Floor" method="_on_out_detector_body_entered"]
