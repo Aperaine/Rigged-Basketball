@@ -67,7 +67,6 @@ texture = ExtResource("6_p57ef")
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="Touch screen" type="Control" parent="UI"]
-modulate = Color(1, 1, 1, 0)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
