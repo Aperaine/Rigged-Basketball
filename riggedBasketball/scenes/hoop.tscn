@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://6ahhekbmm04v"]
+[gd_scene load_steps=7 format=3 uid="uid://6ahhekbmm04v"]
 
 [ext_resource type="Script" uid="uid://cbemd3ha3wtgj" path="res://scripts/hoop.gd" id="1_8ufma"]
-[ext_resource type="Texture2D" uid="uid://jixhkc712t0h" path="res://assets/Hoop.svg" id="2_8ufma"]
 [ext_resource type="Texture2D" uid="uid://bgid86b4g3241" path="res://assets/Backboard.svg" id="2_osnbx"]
+[ext_resource type="Texture2D" uid="uid://drq86mxfsoplx" path="res://assets/HoopBack.svg" id="4_88bej"]
+[ext_resource type="Texture2D" uid="uid://bn03f20r4nfag" path="res://assets/HoopFront.svg" id="4_es7gt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8ufma"]
 size = Vector2(57, 5)
@@ -21,12 +22,19 @@ position = Vector2(0, -37)
 scale = Vector2(0.129482, 0.129482)
 texture = ExtResource("2_osnbx")
 
-[node name="Hoop" type="Sprite2D" parent="."]
-position = Vector2(0, 36)
+[node name="HoopBack" type="Sprite2D" parent="."]
+z_index = -2
+position = Vector2(0, -2.8)
 scale = Vector2(0.13577, 0.13577)
-texture = ExtResource("2_8ufma")
+texture = ExtResource("4_88bej")
+
+[node name="HoopFront" type="Sprite2D" parent="."]
+position = Vector2(0, 39.7)
+scale = Vector2(0.13577, 0.13577)
+texture = ExtResource("4_es7gt")
 
 [node name="Hole" type="Area2D" parent="."]
+visible = false
 collision_mask = 2
 priority = 2
 
@@ -35,11 +43,11 @@ position = Vector2(0, 33.75)
 shape = SubResource("RectangleShape2D_8ufma")
 
 [node name="Rim left" type="CollisionShape2D" parent="."]
-position = Vector2(-50, 4.76837e-07)
+position = Vector2(-50, 5.68434e-14)
 shape = SubResource("CapsuleShape2D_kqfn8")
 
 [node name="Rim right" type="CollisionShape2D" parent="."]
-position = Vector2(48.75, 2.38419e-07)
+position = Vector2(50, 0)
 shape = SubResource("CapsuleShape2D_kqfn8")
 
 [connection signal="body_entered" from="Hole" to="." method="_on_hole_body_entered"]
