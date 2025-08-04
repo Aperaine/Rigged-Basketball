@@ -1,17 +1,20 @@
-[gd_scene load_steps=15 format=3 uid="uid://f02l7av0c05v"]
+[gd_scene load_steps=18 format=3 uid="uid://f02l7av0c05v"]
 
 [ext_resource type="Script" uid="uid://cc0p80mibgo6r" path="res://scripts/gameManager.gd" id="1_iywne"]
 [ext_resource type="PackedScene" uid="uid://6ahhekbmm04v" path="res://scenes/hoop.tscn" id="1_uwrxv"]
 [ext_resource type="Script" uid="uid://utkdveyv6pql" path="res://scripts/floor.gd" id="2_lbhrr"]
 [ext_resource type="Script" uid="uid://fwmcmmni5p5v" path="res://scripts/thrower.gd" id="3_lbhrr"]
 [ext_resource type="Texture2D" uid="uid://bnb76vb325d6u" path="res://icon.svg" id="3_lnu2h"]
-[ext_resource type="Texture2D" uid="uid://bppse4h3oedsf" path="res://assets/Background.png" id="6_p57ef"]
+[ext_resource type="Texture2D" uid="uid://bppse4h3oedsf" path="res://assets/Background/Background.png" id="6_p57ef"]
 [ext_resource type="Texture2D" uid="uid://biuji8iqevysa" path="res://assets/Mark_Left_Key_Dark.png" id="7_gee14"]
 [ext_resource type="Texture2D" uid="uid://4kjjlb6kn3t" path="res://assets/Mark_Right_Key_Dark.png" id="8_0tnpc"]
 [ext_resource type="Texture2D" uid="uid://bkntrs505a4rl" path="res://assets/Mark_Left_Key_Light.png" id="8_vtaks"]
 [ext_resource type="Texture2D" uid="uid://cqeqcvguad7b5" path="res://assets/Mark_Right_Key_Light.png" id="10_kvpfn"]
 [ext_resource type="Script" uid="uid://cyh0d64pfygbl" path="res://addons/maaacks_menus_template/base/scripts/pause_menu_controller.gd" id="11_dinhu"]
 [ext_resource type="PackedScene" uid="uid://bjlc6tdws5nxb" path="res://scenes/scenes/overlaid_menus/pause_menu.tscn" id="12_kvuet"]
+[ext_resource type="Texture2D" uid="uid://bnbqxq2y8tvh4" path="res://assets/Background/Rigged Basketball Background Color.png" id="13_trtic"]
+[ext_resource type="Texture2D" uid="uid://bs1oaxxf5am3e" path="res://assets/Background/Rigged Basketball Background Court.png" id="14_ir15t"]
+[ext_resource type="Texture2D" uid="uid://xqyxlj86kfm6" path="res://assets/Background/Rigged Basketball Background Vignette.png" id="15_ir15t"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_yqjtg"]
 
@@ -19,6 +22,39 @@
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_iywne")
+
+[node name="Background" type="CanvasLayer" parent="."]
+layer = -10
+
+[node name="TextureRect" type="TextureRect" parent="Background"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("13_trtic")
+
+[node name="TextureRect2" type="TextureRect" parent="Background"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -320.0
+offset_top = -480.0
+offset_right = 320.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("14_ir15t")
+stretch_mode = 5
+
+[node name="TextureRect3" type="TextureRect" parent="Background"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("15_ir15t")
 
 [node name="Hoop" parent="." instance=ExtResource("1_uwrxv")]
 position = Vector2(320, 210)
@@ -60,6 +96,7 @@ position = Vector2(320, 240)
 [node name="Camera2D" type="Camera2D" parent="Camera Centerer"]
 
 [node name="RiggedBasketballBackground" type="Sprite2D" parent="."]
+visible = false
 z_index = -5
 position = Vector2(320, 240)
 texture = ExtResource("6_p57ef")

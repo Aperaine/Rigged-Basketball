@@ -8,7 +8,6 @@ var score:int = 0
 
 func _ready() -> void:
 	active = true
-	RenderingServer.set_default_clear_color(Color("000000"))
 	
 	touch_screen.modulate.a = Config.get_config(AppSettings.INPUT_SECTION,"TouchButtonsOpacity", 3) / 7
 

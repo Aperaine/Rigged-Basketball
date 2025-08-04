@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://dfdopk44gmqef"]
+[gd_scene load_steps=25 format=3 uid="uid://dfdopk44gmqef"]
 
 [ext_resource type="Script" uid="uid://by1b8bia4y5rv" path="res://scenes/scenes/menus/main_menu/main_menu_with_animations.gd" id="2_nyjay"]
 [ext_resource type="PackedScene" uid="uid://dp6rklqfwcm7g" path="res://scenes/scenes/menus/options_menu/master_options_menu_with_tabs.tscn" id="3_f368h"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dq2ascmfcp45b" path="res://Rigged Basketball Logo.png" id="5_nyjay"]
 [ext_resource type="PackedScene" uid="uid://bkcsjsk2ciff" path="res://addons/maaacks_menus_template/base/scenes/music_players/background_music_player.tscn" id="5_tvcgf"]
 [ext_resource type="Script" uid="uid://dmkubt2nsnsbn" path="res://addons/maaacks_menus_template/base/scenes/menus/main_menu/config_version_label.gd" id="6_oxbot"]
+[ext_resource type="Texture2D" uid="uid://bppse4h3oedsf" path="res://assets/Background/Background.png" id="6_tvcgf"]
 [ext_resource type="Script" uid="uid://bkwlopi4qn32o" path="res://addons/maaacks_menus_template/base/scenes/menus/main_menu/config_name_label.gd" id="7_bfctc"]
 [ext_resource type="Texture2D" uid="uid://bnb76vb325d6u" path="res://icon.svg" id="9_lpgrh"]
 [ext_resource type="Script" uid="uid://1nf36h0gms3q" path="res://addons/maaacks_menus_template/base/scripts/capture_focus.gd" id="10_vn5r6"]
@@ -389,8 +390,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("6_tvcgf")
 expand_mode = 1
-stretch_mode = 5
 
 [node name="VersionMargin" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -569,6 +570,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 mouse_filter = 2
 theme_override_constants/margin_left = 32
 theme_override_constants/margin_top = 32
