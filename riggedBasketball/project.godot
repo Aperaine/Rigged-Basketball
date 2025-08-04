@@ -40,7 +40,7 @@ enabled=PackedStringArray("res://addons/ProjectileOnCurve2DPlugin/plugin.cfg", "
 
 [gui]
 
-theme/custom="res://scenes/resources/themes/expedition.tres"
+theme/custom="uid://bb6vwl0h1flws"
 
 [input]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://daxf53w1qdxnq"
-path="res://.godot/imported/Rigged Basketball Rigged.png-5c1618ce5c81b7f5637e95222e8784ad.ctex"
+uid="uid://c2sast1spwlgf"
+path="res://.godot/imported/Rigged Basketball Basketball.png-66bf91ed346e1de6e34b73a7e1060180.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Rigged Basketball Rigged.png"
-dest_files=["res://.godot/imported/Rigged Basketball Rigged.png-5c1618ce5c81b7f5637e95222e8784ad.ctex"]
+source_file="res://logo/Rigged Basketball Basketball.png"
+dest_files=["res://.godot/imported/Rigged Basketball Basketball.png-66bf91ed346e1de6e34b73a7e1060180.ctex"]
 
 [params]
 
