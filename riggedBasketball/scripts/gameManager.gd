@@ -37,5 +37,5 @@ func gameOver():
 	print("gg")
 	$GUI.visible = false
 	var instance = gameOverScreen.instantiate()
-	
+	instance.update(score)
 	$Overlay.add_child(instance)
