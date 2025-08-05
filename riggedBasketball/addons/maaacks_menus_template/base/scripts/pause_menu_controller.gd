@@ -9,12 +9,19 @@ signal unpaused
 
 func _unhandled_input(event : InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
-		if not focused_viewport:
-			focused_viewport = get_viewport()
-		var _initial_focus_control = focused_viewport.gui_get_focus_owner()
-		var current_menu = pause_menu_packed.instantiate()
-		get_parent().call_deferred("add_child", current_menu)
-		await current_menu.tree_exited
-		emit_signal("unpaused")
-		if is_inside_tree() and _initial_focus_control:
-			_initial_focus_control.grab_focus()
+		pause()
+
+func pause():
+	if not focused_viewport:
+		focused_viewport = get_viewport()
+	var _initial_focus_control = focused_viewport.gui_get_focus_owner()
+	var current_menu = pause_menu_packed.instantiate()
+	get_parent().call_deferred("add_child", current_menu)
+	await current_menu.tree_exited
+	emit_signal("unpaused")
+	if is_inside_tree() and _initial_focus_control:
+		_initial_focus_control.grab_focus()
+
+
+func _on_pause_button_pressed() -> void:
+	pause()

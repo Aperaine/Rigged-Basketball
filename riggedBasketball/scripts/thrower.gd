@@ -66,10 +66,10 @@ func awaitTimer(length:float):
 	return
 
 func _process(_delta: float) -> void:
-	match timer.is_stopped():
-		false:
-			if get_viewport().gui_get_focus_owner():
-				timer.set_paused(true)
-				await %"Pause Menu".unpaused
-				timer.set_paused(false)
-				print("unpaused")
+	if !timer.is_stopped():
+		if get_viewport().gui_get_focus_owner():
+			timer.set_paused(true)
+			set_process(false)
+			await %"Pause Menu".unpaused
+			timer.set_paused(false)
+			set_process(true)
