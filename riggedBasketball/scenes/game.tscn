@@ -148,12 +148,11 @@ script = ExtResource("11_dinhu")
 pause_menu_packed = ExtResource("12_kvuet")
 
 [node name="GUI" type="CanvasLayer" parent="."]
-layer = -2
 
 [node name="Score Label" type="Label" parent="GUI"]
-offset_left = 32.0
+offset_left = 48.0
 offset_top = 16.0
-offset_right = 192.0
+offset_right = 208.0
 offset_bottom = 86.0
 theme_override_font_sizes/font_size = 60
 text = "0"
@@ -163,9 +162,9 @@ autowrap_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -96.0
+offset_left = -120.0
 offset_top = 16.0
-offset_right = -24.0
+offset_right = -48.0
 offset_bottom = 88.0
 grow_horizontal = 0
 icon = ExtResource("14_ca42v")
