@@ -12,11 +12,8 @@ var activeSpeed:float = 0
 
 func _process(delta: float) -> void:
 	
-	if game.active:
-		move(delta)
+	move(delta)
 	
-	if Input.is_action_just_pressed("DEBUG1"):
-		get_tree().reload_current_scene()
 
 func move(delta:float):
 	var movement = Input.get_axis("moveLeft","moveRight")
@@ -36,3 +33,8 @@ func _on_hole_body_entered(body: RigidBody2D) -> void:
 	game.addScore()
 	body.set_collision_layer_value(2,false)
 	body.scored = true
+
+
+
+func _on_game_game_over_signal() -> void:
+	set_process(false)

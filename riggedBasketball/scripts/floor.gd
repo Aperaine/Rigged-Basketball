@@ -5,9 +5,11 @@ extends Area2D
 func _on_body_entered(body: RigidBody2D) -> void:
 	if body.scored:
 		body.queue_free()
+	else:
+		game.gameOver()
 
 
 func _on_out_detector_body_entered(body: RigidBody2D) -> void:
 	if !body.scored:
 		body.missed()
-		game.gameOver()
+		game.missed()

@@ -8,7 +8,7 @@ extends Node
 signal unpaused
 
 func _unhandled_input(event : InputEvent) -> void:
-	if event.is_action_pressed("ui_cancel"):
+	if event.is_action_pressed("ui_cancel") && $"../..".active:
 		pause()
 
 func pause():

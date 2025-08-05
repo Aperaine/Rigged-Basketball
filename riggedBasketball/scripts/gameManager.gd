@@ -6,7 +6,8 @@ var score:int = 0
 @onready var touch_screen: Control = $"Overlay/Touch screen"
 @onready var score_label: Label = $"GUI/Score Label"
 
-
+signal missedGoal
+signal gameOverSignal
 
 func _ready() -> void:
 	active = true
@@ -22,7 +23,14 @@ func addScore(amount:int = 1):
 		print("Score: ", score)
 		score_label.text = str(score)
 
-func gameOver():
-	print("Game Over")
+func missed():
+	emit_signal("missedGoal")
+	print("Missed")
 	active = false
 	$Thrower.active = false
+
+func gameOver():
+	emit_signal("gameOverSignal")
+	for child in $Balls.get_children():
+		child.on_game_missed_goal()
+	print("gg")

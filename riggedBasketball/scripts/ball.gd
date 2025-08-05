@@ -13,6 +13,8 @@ var firstTime: bool = true
 var yBeforePos:float
 var yAfterPos:float
 
+var failedToScore:bool = false
+
 
 func _ready() -> void:
 	freeze = true
@@ -59,5 +61,16 @@ func physicsRelease():
 	z_index = -1
 
 func missed():
+	failedToScore = true
 	var tween = self.create_tween()
 	tween.tween_property($Sprite, "modulate", Color.RED, 0.1)
+
+
+func on_game_missed_goal() -> void:
+	if !failedToScore:
+		set_deferred("freeze", true)
+		var tween = self.create_tween()
+		tween.tween_property($Sprite, "scale", Vector2(0.15,0.15), 0.1)
+		tween.tween_property($Sprite, "modulate", Color.TRANSPARENT, 0.05)
+		tween.tween_callback(queue_free)
+		

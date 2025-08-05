@@ -57,6 +57,7 @@ grow_vertical = 2
 texture = ExtResource("15_ir15t")
 
 [node name="Hoop" parent="." instance=ExtResource("1_uwrxv")]
+unique_name_in_owner = true
 position = Vector2(320, 210)
 maxSpeed = 600
 
@@ -94,6 +95,30 @@ one_shot = true
 position = Vector2(320, 240)
 
 [node name="Camera2D" type="Camera2D" parent="Camera Centerer"]
+
+[node name="GUI" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="Score Label" type="Label" parent="GUI"]
+offset_left = 48.0
+offset_top = 16.0
+offset_right = 208.0
+offset_bottom = 86.0
+theme_override_font_sizes/font_size = 60
+text = "0"
+autowrap_mode = 1
+
+[node name="Pause Button" type="Button" parent="GUI"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -120.0
+offset_top = 16.0
+offset_right = -48.0
+offset_bottom = 88.0
+grow_horizontal = 0
+icon = ExtResource("14_ca42v")
+expand_icon = true
 
 [node name="Overlay" type="CanvasLayer" parent="."]
 
@@ -147,29 +172,7 @@ unique_name_in_owner = true
 script = ExtResource("11_dinhu")
 pause_menu_packed = ExtResource("12_kvuet")
 
-[node name="GUI" type="CanvasLayer" parent="."]
-
-[node name="Score Label" type="Label" parent="GUI"]
-offset_left = 48.0
-offset_top = 16.0
-offset_right = 208.0
-offset_bottom = 86.0
-theme_override_font_sizes/font_size = 60
-text = "0"
-autowrap_mode = 1
-
-[node name="Pause Button" type="Button" parent="GUI"]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -120.0
-offset_top = 16.0
-offset_right = -48.0
-offset_bottom = 88.0
-grow_horizontal = 0
-icon = ExtResource("14_ca42v")
-expand_icon = true
-
+[connection signal="gameOverSignal" from="." to="Hoop" method="_on_game_game_over_signal"]
 [connection signal="body_entered" from="Floor" to="Floor" method="_on_body_entered"]
 [connection signal="body_entered" from="OutDetector" to="Floor" method="_on_out_detector_body_entered"]
 [connection signal="pressed" from="GUI/Pause Button" to="Overlay/Pause Menu" method="_on_pause_button_pressed"]
