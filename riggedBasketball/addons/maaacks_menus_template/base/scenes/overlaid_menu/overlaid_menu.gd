@@ -10,6 +10,7 @@ extends Control
 		else:
 			process_mode = PROCESS_MODE_INHERIT
 @export var makes_mouse_visible : bool = true
+@export var closable:bool = true
 
 var _initial_pause_state : bool = false
 var _initial_focus_mode : FocusMode = FOCUS_ALL
@@ -26,7 +27,8 @@ func close() -> void:
 	queue_free()
 
 func _handle_cancel_input() -> void:
-	close()
+	if closable:
+		close()
 
 func _unhandled_input(event : InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
@@ -34,7 +36,8 @@ func _unhandled_input(event : InputEvent) -> void:
 		get_viewport().set_input_as_handled()
 
 func _on_close_button_pressed() -> void:
-	close()
+	if closable:
+		close()
 
 func _enter_tree() -> void:
 	_scene_tree = get_tree()

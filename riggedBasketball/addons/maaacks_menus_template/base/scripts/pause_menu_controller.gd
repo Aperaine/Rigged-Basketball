@@ -17,7 +17,11 @@ func pause():
 	var _initial_focus_control = focused_viewport.gui_get_focus_owner()
 	var current_menu = pause_menu_packed.instantiate()
 	get_parent().call_deferred("add_child", current_menu)
+	
+	$"../../GUI".layer = 0
 	await current_menu.tree_exited
+	$"../../GUI".layer = 2
+	
 	emit_signal("unpaused")
 	if is_inside_tree() and _initial_focus_control:
 		_initial_focus_control.grab_focus()

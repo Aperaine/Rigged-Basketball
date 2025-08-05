@@ -2,6 +2,7 @@ extends Node2D
 
 var score:int = 0
 @export var active:bool = false
+@export var gameOverScreen:PackedScene
 
 @onready var touch_screen: Control = $"Overlay/Touch screen"
 @onready var score_label: Label = $"GUI/Score Label"
@@ -25,12 +26,16 @@ func addScore(amount:int = 1):
 
 func missed():
 	emit_signal("missedGoal")
+	for child in $Balls.get_children():
+		child.on_game_missed_goal()
 	print("Missed")
 	active = false
 	$Thrower.active = false
 
 func gameOver():
 	emit_signal("gameOverSignal")
-	for child in $Balls.get_children():
-		child.on_game_missed_goal()
 	print("gg")
+	$GUI.visible = false
+	var instance = gameOverScreen.instantiate()
+	
+	$Overlay.add_child(instance)

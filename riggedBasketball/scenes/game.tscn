@@ -1,7 +1,8 @@
-[gd_scene load_steps=18 format=3 uid="uid://f02l7av0c05v"]
+[gd_scene load_steps=19 format=3 uid="uid://f02l7av0c05v"]
 
 [ext_resource type="Script" uid="uid://cc0p80mibgo6r" path="res://scripts/gameManager.gd" id="1_iywne"]
 [ext_resource type="PackedScene" uid="uid://6ahhekbmm04v" path="res://scenes/hoop.tscn" id="1_uwrxv"]
+[ext_resource type="PackedScene" uid="uid://nn51m4bipit0" path="res://scenes/scenes/overlaid_menus/gameOver.tscn" id="2_ca42v"]
 [ext_resource type="Script" uid="uid://utkdveyv6pql" path="res://scripts/floor.gd" id="2_lbhrr"]
 [ext_resource type="Script" uid="uid://fwmcmmni5p5v" path="res://scripts/thrower.gd" id="3_lbhrr"]
 [ext_resource type="Texture2D" uid="uid://bnb76vb325d6u" path="res://icon.svg" id="3_lnu2h"]
@@ -22,6 +23,7 @@
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_iywne")
+gameOverScreen = ExtResource("2_ca42v")
 
 [node name="Background" type="CanvasLayer" parent="."]
 layer = -10
