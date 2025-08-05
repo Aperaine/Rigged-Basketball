@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://nn51m4bipit0"]
 
 [ext_resource type="Script" uid="uid://syfwdkuegeit" path="res://scenes/scenes/overlaid_menus/gameOver.gd" id="1_w53j3"]
-[ext_resource type="PackedScene" uid="uid://bbti572gulioe" path="res://scenes/scenes/menus/options_menu/mini_options_menu.tscn" id="2_f4fkh"]
+[ext_resource type="PackedScene" uid="uid://rcqe50r6m4ya" path="res://scenes/scenes/overlaid_menus/mini_options_overlaid_menu.tscn" id="3_f4fkh"]
 [ext_resource type="Script" uid="uid://1nf36h0gms3q" path="res://addons/maaacks_menus_template/base/scripts/capture_focus.gd" id="3_wrn8b"]
 [ext_resource type="Texture2D" uid="uid://bac580q4gc7xk" path="res://assets/kenney_game-icons/PNG/Black/gear.png" id="4_f4fkh"]
 [ext_resource type="Texture2D" uid="uid://8valkb82s5c7" path="res://assets/kenney_game-icons/PNG/Black/home.png" id="5_ha70d"]
@@ -16,8 +16,9 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_w53j3")
 ScoreLabel = NodePath("MenuPanelContainer/MarginContainer/BoxContainer/ScoreSection/ScoreNumber")
-options_packed_scene = ExtResource("2_f4fkh")
+options_packed_scene = ExtResource("3_f4fkh")
 main_menu_scene = "uid://dfdopk44gmqef"
+checkConfirmation = false
 pauses_game = true
 closable = false
 
@@ -76,17 +77,20 @@ alignment = 1
 
 [node name="Label" type="Label" parent="MenuPanelContainer/MarginContainer/BoxContainer/ScoreSection"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 30
 text = "Score"
 
 [node name="Label3" type="Label" parent="MenuPanelContainer/MarginContainer/BoxContainer/ScoreSection"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 30
 text = "--------------------------------"
 horizontal_alignment = 1
 clip_text = true
 
 [node name="ScoreNumber" type="Label" parent="MenuPanelContainer/MarginContainer/BoxContainer/ScoreSection"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 30
 text = "000"
 horizontal_alignment = 2
 
@@ -96,17 +100,20 @@ alignment = 1
 
 [node name="Label" type="Label" parent="MenuPanelContainer/MarginContainer/BoxContainer/HighSection"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 30
 text = "High"
 
 [node name="Label3" type="Label" parent="MenuPanelContainer/MarginContainer/BoxContainer/HighSection"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 30
 text = "--------------------------------"
 horizontal_alignment = 1
 clip_text = true
 
 [node name="Label2" type="Label" parent="MenuPanelContainer/MarginContainer/BoxContainer/HighSection"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 30
 text = "000"
 horizontal_alignment = 2
 

@@ -1,7 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://b1nye1o77lbdg"]
+[gd_scene load_steps=4 format=3 uid="uid://b1nye1o77lbdg"]
 
-[ext_resource type="PackedScene" path="res://addons/maaacks_menus_template/base/scenes/loading_screen/loading_screen.tscn" id="1_rqt5e"]
-[ext_resource type="Script" path="res://scenes/scenes/loading_screen/loading_screen.gd" id="2_t84qw"]
+[ext_resource type="PackedScene" uid="uid://cd0jbh4metflb" path="res://addons/maaacks_menus_template/base/scenes/loading_screen/loading_screen.tscn" id="1_rqt5e"]
+[ext_resource type="Script" uid="uid://dhyapjhxjyvxx" path="res://scenes/scenes/loading_screen/loading_screen.gd" id="2_t84qw"]
+[ext_resource type="Texture2D" uid="uid://dq2ascmfcp45b" path="res://Rigged Basketball Logo.png" id="3_t84qw"]
 
 [node name="LoadingScreen" instance=ExtResource("1_rqt5e")]
 script = ExtResource("2_t84qw")
+
+[node name="TextureRect" type="TextureRect" parent="." index="2"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -320.0
+offset_top = 64.0
+offset_right = 319.0
+offset_bottom = 294.0
+grow_horizontal = 2
+texture = ExtResource("3_t84qw")
+expand_mode = 1

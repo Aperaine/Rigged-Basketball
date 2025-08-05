@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=33 format=3 uid="uid://bb6vwl0h1flws"]
+[gd_resource type="Theme" load_steps=34 format=3 uid="uid://bb6vwl0h1flws"]
 
 [ext_resource type="Texture2D" uid="uid://d00ws7wljnit4" path="res://assets/FlatUI4/UIpack_vector.svg" id="1"]
 [ext_resource type="FontFile" uid="uid://6n05nrjxhe6w" path="res://assets/Fonts/Unitblock.ttf" id="1_fknk0"]
@@ -79,6 +79,10 @@ region = Rect2(200, 644, 36, 36)
 [sub_resource type="AtlasTexture" id="16"]
 atlas = ExtResource("1")
 region = Rect2(872, 684, 28, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t1j7y"]
+atlas = ExtResource("1")
+region = Rect2(942, 684, 28, 41)
 
 [sub_resource type="StyleBoxTexture" id="17"]
 texture = ExtResource("1")
@@ -225,7 +229,7 @@ CheckButton/styles/normal = null
 CheckButton/styles/pressed = null
 HSlider/icons/grabber = SubResource("16")
 HSlider/icons/grabber_disabled = null
-HSlider/icons/grabber_highlight = SubResource("16")
+HSlider/icons/grabber_highlight = SubResource("AtlasTexture_t1j7y")
 HSlider/icons/tick = null
 HSlider/styles/grabber_area = SubResource("17")
 HSlider/styles/grabber_area_highlight = SubResource("17")

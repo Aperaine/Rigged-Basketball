@@ -3,7 +3,7 @@ extends OverlaidMenu
 
 @export var options_packed_scene : PackedScene
 @export_file("*.tscn") var main_menu_scene : String
-
+@export var checkConfirmation : bool = true
 var popup_open : Node
 
 func close_popup() -> void:
@@ -56,19 +56,28 @@ func _ready() -> void:
 	_hide_main_menu_if_unset()
 
 func _on_restart_button_pressed() -> void:
-	%ConfirmRestart.popup_centered()
-	popup_open = %ConfirmRestart
+	if checkConfirmation:
+		%ConfirmRestart.popup_centered()
+		popup_open = %ConfirmRestart
+	else:
+		_on_confirm_restart_confirmed()
 
 func _on_options_button_pressed() -> void:
 	open_options_menu()
 
 func _on_main_menu_button_pressed() -> void:
-	%ConfirmMainMenu.popup_centered()
-	popup_open = %ConfirmMainMenu
+	if checkConfirmation:
+		%ConfirmMainMenu.popup_centered()
+		popup_open = %ConfirmMainMenu
+	else:
+		_on_confirm_main_menu_confirmed()
 
 func _on_exit_button_pressed() -> void:
-	%ConfirmExit.popup_centered()
-	popup_open = %ConfirmExit
+	if checkConfirmation:
+		%ConfirmExit.popup_centered()
+		popup_open = %ConfirmExit
+	else:
+		_on_confirm_exit_confirmed()
 
 func _on_confirm_restart_confirmed() -> void:
 	SceneLoader.reload_current_scene()
