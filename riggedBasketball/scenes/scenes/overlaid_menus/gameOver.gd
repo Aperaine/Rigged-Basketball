@@ -3,6 +3,7 @@ extends PauseMenu
 @export var TitleLabel : RichTextLabel
 @export var ScoreLabel : Label
 @export var HighLabel : Label
+@export var PosLabel : Label
 var scoreText : String
 
 

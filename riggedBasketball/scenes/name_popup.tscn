@@ -17,7 +17,7 @@ visible = true
 theme_override_styles/panel = SubResource("StyleBoxTexture_8f0wy")
 script = ExtResource("2_8f0wy")
 lineedit = NodePath("BoxContainer/LineEdit")
-score = 4
+score = 5
 
 [node name="BoxContainer" type="BoxContainer" parent="."]
 offset_left = 12.0
