@@ -19,14 +19,7 @@ func move(delta:float):
 	var movement = Input.get_axis("moveLeft","moveRight")
 	activeSpeed = move_toward(activeSpeed, movement * maxSpeed, moveAcceleration)
 	
-	position.x += activeSpeed * delta
-	
-	if position.x >= maxPositionX:
-		position.x = maxPositionX
-		activeSpeed = 0
-	elif position.x <= minPositionX:
-		position.x = minPositionX
-		activeSpeed = 0
+	position.x = clamp(position.x + activeSpeed * delta, minPositionX, maxPositionX)
 
 
 func _on_hole_body_entered(body: RigidBody2D) -> void:

@@ -95,20 +95,20 @@ alignment = 1
 
 [node name="Label" type="Label" parent="MenuPanelContainer/MarginContainer/BoxContainer/ScoreSection"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 25
 text = "Score"
 
 [node name="Label3" type="Label" parent="MenuPanelContainer/MarginContainer/BoxContainer/ScoreSection"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 25
 text = "--------------------------------"
 horizontal_alignment = 1
 clip_text = true
 
 [node name="ScoreNumber" type="Label" parent="MenuPanelContainer/MarginContainer/BoxContainer/ScoreSection"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 25
 text = "000"
 horizontal_alignment = 2
 
@@ -118,20 +118,20 @@ alignment = 1
 
 [node name="Label" type="Label" parent="MenuPanelContainer/MarginContainer/BoxContainer/HighSection"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 25
 text = "Best"
 
 [node name="Label3" type="Label" parent="MenuPanelContainer/MarginContainer/BoxContainer/HighSection"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 25
 text = "--------------------------------"
 horizontal_alignment = 1
 clip_text = true
 
 [node name="HighNumber" type="Label" parent="MenuPanelContainer/MarginContainer/BoxContainer/HighSection"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 25
 text = "000"
 horizontal_alignment = 2
 
@@ -141,8 +141,8 @@ size_flags_vertical = 3
 
 [node name="MenuButtonsMargin" type="MarginContainer" parent="MenuPanelContainer/MarginContainer/BoxContainer"]
 layout_mode = 2
-theme_override_constants/margin_top = 16
-theme_override_constants/margin_bottom = 16
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_bottom = 10
 
 [node name="MenuButtons" type="BoxContainer" parent="MenuPanelContainer/MarginContainer/BoxContainer/MenuButtonsMargin"]
 unique_name_in_owner = true
@@ -187,6 +187,7 @@ dialog_text = "Go back to main menu?"
 [node name="ConfirmExit" type="ConfirmationDialog" parent="."]
 unique_name_in_owner = true
 auto_translate_mode = 1
+size = Vector2i(200, 110)
 dialog_text = "Quit the game?"
 
 [connection signal="pressed" from="MenuPanelContainer/MarginContainer/BoxContainer/MenuButtonsMargin/MenuButtons/OptionsButton" to="." method="_on_options_button_pressed"]

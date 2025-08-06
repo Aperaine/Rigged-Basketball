@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=34 format=3 uid="uid://bb6vwl0h1flws"]
+[gd_resource type="Theme" load_steps=36 format=3 uid="uid://bb6vwl0h1flws"]
 
 [ext_resource type="Texture2D" uid="uid://d00ws7wljnit4" path="res://assets/FlatUI4/UIpack_vector.svg" id="1"]
 [ext_resource type="FontFile" uid="uid://6n05nrjxhe6w" path="res://assets/Fonts/Unitblock.ttf" id="1_fknk0"]
@@ -113,6 +113,17 @@ texture_margin_top = 13.3469
 texture_margin_right = 13.3469
 texture_margin_bottom = 11.2935
 region_rect = Rect2(485, 310, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fknk0"]
+atlas = ExtResource("1")
+region = Rect2(485, 310, 100, 100)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_316u0"]
+texture = SubResource("AtlasTexture_fknk0")
+texture_margin_left = 12.0
+texture_margin_top = 13.0
+texture_margin_right = 13.0
+texture_margin_bottom = 11.0
 
 [sub_resource type="AtlasTexture" id="22"]
 atlas = ExtResource("1")
@@ -260,6 +271,7 @@ OptionButton/styles/hover = null
 OptionButton/styles/normal = null
 OptionButton/styles/pressed = null
 Panel/styles/panel = SubResource("21")
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_316u0")
 PopupMenu/colors/font_color = Color(0, 0, 0, 1)
 PopupMenu/colors/font_color_accel = Color(0.701961, 0.701961, 0.701961, 0.8)
 PopupMenu/colors/font_disabled_color = Color(0.4, 0.4, 0.4, 0.8)

@@ -21,6 +21,8 @@ AppConfig="*res://addons/maaacks_menus_template/base/scenes/autoloads/app_config
 SceneLoader="*res://addons/maaacks_menus_template/base/scenes/autoloads/scene_loader.tscn"
 ProjectMusicController="*res://addons/maaacks_menus_template/base/scenes/autoloads/project_music_controller.tscn"
 ProjectUISoundController="*res://addons/maaacks_menus_template/base/scenes/autoloads/project_ui_sound_controller.tscn"
+SilentWolf="*res://addons/silent_wolf/SilentWolf.gd"
+Leaderboard="*res://scripts/leaderboard.gd"
 
 [display]
 
@@ -36,7 +38,7 @@ movie_writer/fps=120
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/ProjectileOnCurve2DPlugin/plugin.cfg", "res://addons/godot_super-wakatime/plugin.cfg", "res://addons/maaacks_menus_template/plugin.cfg")
+enabled=PackedStringArray("res://addons/ProjectileOnCurve2DPlugin/plugin.cfg", "res://addons/godot_super-wakatime/plugin.cfg", "res://addons/maaacks_menus_template/plugin.cfg", "res://addons/silent_wolf/plugin.cfg")
 
 [gui]
 
