@@ -34,8 +34,18 @@ func missed():
 
 func gameOver():
 	emit_signal("gameOverSignal")
-	print("gg")
 	$GUI.visible = false
+	
+	var high:int = Config.get_config(&'GameSettings', "high", 0)
+	var newHigh:bool = false
+	print("high: ", high)
+	if score > high:
+		print("NEW HIGH SCORE: ", score)
+		high = score
+		newHigh = true
+		Config.set_config(&'GameSettings', "high", high)
+	
 	var instance = gameOverScreen.instantiate()
-	instance.update(score)
+	instance.update(score, high, newHigh)
 	$Overlay.add_child(instance)
+	

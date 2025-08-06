@@ -3,9 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://cikf3o5omnunl" path="res://addons/maaacks_menus_template/base/scenes/overlaid_menu/menus/mini_options_overlaid_menu.tscn" id="1_5piya"]
 
 [node name="MiniOptionsOverlaidMenu" instance=ExtResource("1_5piya")]
-menu_scene = Object(SceneTree,"auto_accept_quit":false,"quit_on_go_back":true,"debug_collisions_hint":false,"debug_paths_hint":false,"debug_navigation_hint":false,"paused":false,"multiplayer_poll":true,"physics_interpolation":false,"script":null)
-
-closable = null
 
 [node name="MenuButtons" parent="MenuPanelContainer/MarginContainer/BoxContainer/MenuButtonsMargin" index="0"]
 enabled = true
