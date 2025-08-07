@@ -13,7 +13,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1")
-scrollStep = null
 scrollContainer = NodePath("panc/Board/BoxContainer/HighScores")
 scoreItemContainer = NodePath("panc/Board/BoxContainer/HighScores/ScoreItemContainer")
 messageLabel = NodePath("panc/MessageContainer/TextMessage")
@@ -25,10 +24,10 @@ anchors_preset = 13
 anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -256.0
-offset_top = 32.0
-offset_right = 256.0
-offset_bottom = -32.0
+offset_left = -224.0
+offset_top = 37.0
+offset_right = 224.0
+offset_bottom = -37.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -51,7 +50,7 @@ horizontal_alignment = 1
 layout_mode = 2
 
 [node name="HighScores" type="ScrollContainer" parent="panc/Board/BoxContainer"]
-custom_minimum_size = Vector2(400, 320)
+custom_minimum_size = Vector2(300, 320)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -82,6 +81,7 @@ expand_icon = true
 script = ExtResource("4_7dnr8")
 
 [node name="MessageContainer" type="CenterContainer" parent="panc"]
+visible = false
 layout_mode = 2
 
 [node name="TextMessage" type="Label" parent="panc/MessageContainer"]

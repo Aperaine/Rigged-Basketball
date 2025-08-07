@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://2wy4d8d5av0l"]
 
 [node name="ScoreItem" type="Panel"]
-custom_minimum_size = Vector2(400, 50)
+custom_minimum_size = Vector2(300, 50)
 grow_horizontal = 0
 grow_vertical = 0
 theme_type_variation = &"RedPanel"
@@ -10,7 +10,7 @@ theme_type_variation = &"RedPanel"
 custom_minimum_size = Vector2(100, 25)
 layout_mode = 0
 offset_left = 8.0
-offset_right = 359.0
+offset_right = 260.0
 offset_bottom = 50.0
 theme_override_font_sizes/normal_font_size = 32
 text = "1. Godzilla"
