@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cpscnpnwjcccg" path="res://assets/kenney_game-icons/PNG/White/down.png" id="3_5pbpo"]
 [ext_resource type="Script" uid="uid://1nf36h0gms3q" path="res://addons/maaacks_menus_template/base/scripts/capture_focus.gd" id="4_7dnr8"]
 
-[node name="Leaderboard" type="Control" node_paths=PackedStringArray("scrollContainer")]
+[node name="Leaderboard" type="Control" node_paths=PackedStringArray("scrollContainer", "scoreItemContainer", "messageLabel", "messageContainer")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -15,6 +15,9 @@ grow_vertical = 2
 script = ExtResource("1")
 scrollStep = null
 scrollContainer = NodePath("panc/Board/BoxContainer/HighScores")
+scoreItemContainer = NodePath("panc/Board/BoxContainer/HighScores/ScoreItemContainer")
+messageLabel = NodePath("panc/MessageContainer/TextMessage")
+messageContainer = NodePath("panc/MessageContainer")
 
 [node name="panc" type="PanelContainer" parent="."]
 layout_mode = 1
@@ -78,15 +81,10 @@ icon = ExtResource("3_5pbpo")
 expand_icon = true
 script = ExtResource("4_7dnr8")
 
-[node name="MessageContainer" type="CenterContainer" parent="."]
-visible = false
+[node name="MessageContainer" type="CenterContainer" parent="panc"]
 layout_mode = 2
-offset_left = 76.0
-offset_top = 194.0
-offset_right = 563.0
-offset_bottom = 236.0
 
-[node name="TextMessage" type="Label" parent="MessageContainer"]
+[node name="TextMessage" type="Label" parent="panc/MessageContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 36
 text = "Loading scores..."

@@ -29,7 +29,7 @@ vertical = true
 [node name="Label" type="Label" parent="BoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
-text = "Submit score"
+text = "Player name"
 
 [node name="LineEdit" type="LineEdit" parent="BoxContainer"]
 layout_mode = 2
