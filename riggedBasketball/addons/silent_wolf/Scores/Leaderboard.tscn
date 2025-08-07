@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://b2h8ok8yfc7wb"]
+[gd_scene load_steps=2 format=3 uid="uid://b2h8ok8yfc7wb"]
 
 [ext_resource type="Script" uid="uid://b51cquhj43f11" path="res://addons/silent_wolf/Scores/Leaderboard.gd" id="1"]
-[ext_resource type="PackedScene" uid="uid://clllbf6am8qdf" path="res://addons/silent_wolf/common/SWButton.tscn" id="4"]
 
 [node name="Leaderboard" type="Control"]
 layout_mode = 3
@@ -28,7 +27,6 @@ grow_vertical = 2
 [node name="Board" type="VBoxContainer" parent="panc"]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 0
 
 [node name="TitleContainer" type="MarginContainer" parent="panc/Board"]
 layout_mode = 2
@@ -52,15 +50,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="CloseButtonContainer" type="MarginContainer" parent="panc"]
-layout_mode = 2
-size_flags_vertical = 8
-
-[node name="CloseButton" parent="panc/CloseButtonContainer" instance=ExtResource("4")]
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "Close Leaderboard"
-
 [node name="MessageContainer" type="CenterContainer" parent="."]
 visible = false
 layout_mode = 2
@@ -73,5 +62,3 @@ offset_bottom = 236.0
 layout_mode = 2
 theme_override_font_sizes/font_size = 36
 text = "Loading scores..."
-
-[connection signal="pressed" from="panc/CloseButtonContainer/CloseButton" to="." method="_on_CloseButton_pressed"]

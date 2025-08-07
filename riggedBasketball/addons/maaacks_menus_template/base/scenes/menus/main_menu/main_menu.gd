@@ -5,9 +5,11 @@ extends Control
 @export_file("*.tscn") var game_scene_path : String
 @export var options_packed_scene : PackedScene
 @export var credits_packed_scene : PackedScene
+@export var leaderboard_packed_scene : PackedScene
 
 var options_scene
 var credits_scene
+var leaderboard_scene
 var sub_menu
 
 func load_game_scene() -> void:
@@ -68,10 +70,19 @@ func _add_or_hide_credits() -> void:
 			credits_scene.connect("end_reached", _on_credits_end_reached)
 		%CreditsContainer.call_deferred("add_child", credits_scene)
 
+func _add_or_hide_leaderboard() -> void:
+	if leaderboard_packed_scene == null:
+		%LeaderboardButton.hide()
+	else:
+		leaderboard_scene = leaderboard_packed_scene.instantiate()
+		leaderboard_scene.hide()
+		%LeaderboardContainer.call_deferred("add_child", leaderboard_scene)
+
 func _ready() -> void:
 	_hide_exit_for_web()
 	_add_or_hide_options()
 	_add_or_hide_credits()
+	_add_or_hide_leaderboard()
 	_hide_new_game_if_unset()
 
 func _on_new_game_button_pressed() -> void:
@@ -82,6 +93,9 @@ func _on_options_button_pressed() -> void:
 
 func _on_credits_button_pressed() -> void:
 	_open_sub_menu(credits_scene)
+
+func _on_leaderboard_button_pressed() -> void:
+	_open_sub_menu(leaderboard_scene)
 
 func _on_exit_button_pressed() -> void:
 	get_tree().quit()

@@ -1,8 +1,9 @@
-[gd_scene load_steps=24 format=3 uid="uid://dfdopk44gmqef"]
+[gd_scene load_steps=26 format=3 uid="uid://dfdopk44gmqef"]
 
 [ext_resource type="Script" uid="uid://by1b8bia4y5rv" path="res://scenes/scenes/menus/main_menu/main_menu_with_animations.gd" id="2_nyjay"]
 [ext_resource type="PackedScene" uid="uid://dp6rklqfwcm7g" path="res://scenes/scenes/menus/options_menu/master_options_menu_with_tabs.tscn" id="3_f368h"]
 [ext_resource type="PackedScene" uid="uid://c83gsyfoiqoof" path="res://scenes/scenes/credits/scrolling_credits.tscn" id="3_tf5kl"]
+[ext_resource type="PackedScene" uid="uid://b2h8ok8yfc7wb" path="res://addons/silent_wolf/Scores/Leaderboard.tscn" id="4_oxbot"]
 [ext_resource type="Script" uid="uid://b5oej1q4h7jvh" path="res://addons/maaacks_menus_template/base/scripts/ui_sound_controller.gd" id="4_tf5kl"]
 [ext_resource type="Texture2D" uid="uid://dq2ascmfcp45b" path="res://Rigged Basketball Logo.png" id="5_nyjay"]
 [ext_resource type="PackedScene" uid="uid://bkcsjsk2ciff" path="res://addons/maaacks_menus_template/base/scenes/music_players/background_music_player.tscn" id="5_tvcgf"]
@@ -10,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://bppse4h3oedsf" path="res://assets/Background/Background.png" id="6_tvcgf"]
 [ext_resource type="Texture2D" uid="uid://ctsa83hxpvi4k" path="res://assets/kenney_game-icons/PNG/White/right.png" id="9_tf5kl"]
 [ext_resource type="Script" uid="uid://1nf36h0gms3q" path="res://addons/maaacks_menus_template/base/scripts/capture_focus.gd" id="10_vn5r6"]
+[ext_resource type="Texture2D" uid="uid://ds2cqxcnuains" path="res://assets/kenney_game-icons/PNG/White/trophy.png" id="11_tvcgf"]
 
 [sub_resource type="Animation" id="1"]
 resource_name = "Intro"
@@ -390,6 +392,7 @@ script = ExtResource("2_nyjay")
 game_scene_path = "uid://f02l7av0c05v"
 options_packed_scene = ExtResource("3_f368h")
 credits_packed_scene = ExtResource("3_tf5kl")
+leaderboard_packed_scene = ExtResource("4_oxbot")
 
 [node name="UISoundController" type="Node" parent="."]
 script = ExtResource("4_tf5kl")
@@ -532,6 +535,25 @@ icon_alignment = 1
 expand_icon = true
 script = ExtResource("10_vn5r6")
 
+[node name="LeaderboardButton" type="Button" parent="MenuContainer/MenuButtonsMargin/MenuButtonsContainer"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 99.0
+offset_top = -22.0
+offset_right = 179.0
+offset_bottom = 58.0
+grow_horizontal = 2
+grow_vertical = 2
+icon = ExtResource("11_tvcgf")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("10_vn5r6")
+
 [node name="MenuButtonsBoxContainer" type="BoxContainer" parent="MenuContainer/MenuButtonsMargin/MenuButtonsContainer"]
 unique_name_in_owner = true
 modulate = Color(1, 1, 1, 0)
@@ -590,6 +612,20 @@ theme_override_constants/margin_top = 32
 theme_override_constants/margin_right = 32
 theme_override_constants/margin_bottom = 64
 
+[node name="LeaderboardContainer" type="MarginContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 64
+
 [node name="FlowControlContainer" type="MarginContainer" parent="."]
 layout_mode = 0
 anchor_right = 1.0
@@ -615,8 +651,10 @@ offset_top = -31.0
 offset_right = 45.0
 grow_vertical = 0
 text = "Back"
+script = ExtResource("10_vn5r6")
 
 [connection signal="pressed" from="MenuContainer/MenuButtonsMargin/MenuButtonsContainer/NewGameButton" to="." method="_on_new_game_button_pressed"]
+[connection signal="pressed" from="MenuContainer/MenuButtonsMargin/MenuButtonsContainer/LeaderboardButton" to="." method="_on_leaderboard_button_pressed"]
 [connection signal="pressed" from="MenuContainer/MenuButtonsMargin/MenuButtonsContainer/MenuButtonsBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
 [connection signal="pressed" from="MenuContainer/MenuButtonsMargin/MenuButtonsContainer/MenuButtonsBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="MenuContainer/MenuButtonsMargin/MenuButtonsContainer/MenuButtonsBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
