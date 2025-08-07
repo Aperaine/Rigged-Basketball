@@ -106,14 +106,12 @@ func add_no_scores_message() -> void:
 	var item = messageLabel
 	item.text = "No scores yet!"
 	messageContainer.show()
-	item.offset_top = 135
 
 
 func add_loading_scores_message() -> void:
 	var item = messageLabel
 	item.text = "Loading scores..."
 	messageContainer.show()
-	item.offset_top = 135
 
 
 func hide_message() -> void:

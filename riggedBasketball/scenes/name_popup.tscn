@@ -11,25 +11,28 @@ texture_margin_right = 13.0
 texture_margin_bottom = 11.0
 region_rect = Rect2(485, 310, 100, 100)
 
-[node name="NamePopup" type="PopupPanel" node_paths=PackedStringArray("lineedit")]
-size = Vector2i(170, 173)
+[node name="NamePopup" type="AcceptDialog" node_paths=PackedStringArray("lineedit")]
+title = "Name already in use"
+initial_position = 1
+size = Vector2i(250, 179)
 visible = true
 theme_override_styles/panel = SubResource("StyleBoxTexture_8f0wy")
+ok_button_text = "Confirm"
+dialog_close_on_escape = false
 script = ExtResource("2_8f0wy")
 lineedit = NodePath("BoxContainer/LineEdit")
-score = 5
 
 [node name="BoxContainer" type="BoxContainer" parent="."]
 offset_left = 12.0
 offset_top = 13.0
-offset_right = 157.0
-offset_bottom = 162.0
+offset_right = 237.0
+offset_bottom = 104.0
 vertical = true
 
 [node name="Label" type="Label" parent="BoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
-text = "Player name"
+text = "Name:"
 
 [node name="LineEdit" type="LineEdit" parent="BoxContainer"]
 layout_mode = 2
@@ -38,9 +41,5 @@ max_length = 10
 context_menu_enabled = false
 emoji_menu_enabled = false
 
-[node name="Button" type="Button" parent="BoxContainer"]
-layout_mode = 2
-text = "Confirm"
-
+[connection signal="confirmed" from="." to="." method="_on_button_pressed"]
 [connection signal="text_submitted" from="BoxContainer/LineEdit" to="." method="submit"]
-[connection signal="pressed" from="BoxContainer/Button" to="." method="_on_button_pressed"]

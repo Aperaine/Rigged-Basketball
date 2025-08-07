@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=36 format=3 uid="uid://bb6vwl0h1flws"]
+[gd_resource type="Theme" load_steps=38 format=3 uid="uid://bb6vwl0h1flws"]
 
 [ext_resource type="Texture2D" uid="uid://d00ws7wljnit4" path="res://assets/FlatUI4/UIpack_vector.svg" id="1"]
 [ext_resource type="FontFile" uid="uid://6n05nrjxhe6w" path="res://assets/Fonts/Unitblock.ttf" id="1_fknk0"]
@@ -167,6 +167,17 @@ expand_margin_top = 10.0
 expand_margin_bottom = 10.0
 region_rect = Rect2(485, 310, 100, 100)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_316u0"]
+atlas = ExtResource("1")
+region = Rect2(364, 310, 100, 100)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_23bad"]
+texture = SubResource("AtlasTexture_316u0")
+texture_margin_left = 12.0
+texture_margin_top = 13.0
+texture_margin_right = 13.0
+texture_margin_bottom = 11.0
+
 [sub_resource type="StyleBoxTexture" id="28"]
 content_margin_left = 12.0
 content_margin_top = 10.0
@@ -289,6 +300,8 @@ PopupMenu/styles/labeled_separator_right = null
 PopupMenu/styles/panel = SubResource("27")
 PopupMenu/styles/panel_disabled = null
 PopupMenu/styles/separator = null
+RedPanel/base_type = &"Panel"
+RedPanel/styles/panel = SubResource("StyleBoxTexture_23bad")
 TextEdit/colors/background_color = Color(0, 0, 0, 0)
 TextEdit/colors/bookmark_color = Color(0.08, 0.49, 0.98, 1)
 TextEdit/colors/brace_mismatch_color = Color(1, 0.2, 0.2, 1)

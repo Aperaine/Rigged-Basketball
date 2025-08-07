@@ -1,4 +1,4 @@
-extends PopupPanel
+extends Window
 
 signal playerNameSubmitted(name:String)
 
@@ -10,8 +10,6 @@ func submit(name:String):
 		return
 	
 	emit_signal("playerNameSubmitted",name)
-	
-	SilentWolf.Scores.save_score(name, score)
 
 
 func _on_button_pressed() -> void:

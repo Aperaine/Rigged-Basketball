@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://nn51m4bipit0"]
+[gd_scene load_steps=12 format=3 uid="uid://nn51m4bipit0"]
 
 [ext_resource type="Script" uid="uid://syfwdkuegeit" path="res://scenes/scenes/overlaid_menus/gameOver.gd" id="1_w53j3"]
 [ext_resource type="PackedScene" uid="uid://rcqe50r6m4ya" path="res://scenes/scenes/overlaid_menus/mini_options_overlaid_menu.tscn" id="3_f4fkh"]
@@ -9,11 +9,12 @@
 [ext_resource type="Texture2D" uid="uid://bac580q4gc7xk" path="res://assets/kenney_game-icons/PNG/Black/gear.png" id="4_f4fkh"]
 [ext_resource type="Texture2D" uid="uid://8valkb82s5c7" path="res://assets/kenney_game-icons/PNG/Black/home.png" id="5_ha70d"]
 [ext_resource type="Texture2D" uid="uid://cpscnpnwjcccg" path="res://assets/kenney_game-icons/PNG/White/down.png" id="5_naqrt"]
+[ext_resource type="PackedScene" uid="uid://c3eftmmjrmkyt" path="res://scenes/name_popup.tscn" id="10_vl7g0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a5rjv"]
 bg_color = Color(0.08, 0.08, 0.08, 0.682353)
 
-[node name="GameOverScreen" type="Control" node_paths=PackedStringArray("TitleLabel", "ScoreLabel", "HighLabel", "PosLabel")]
+[node name="GameOverScreen" type="Control" node_paths=PackedStringArray("TitleLabel", "ScoreLabel", "HighLabel", "namePopup")]
 process_mode = 3
 layout_mode = 3
 anchors_preset = 15
@@ -25,7 +26,7 @@ script = ExtResource("1_w53j3")
 TitleLabel = NodePath("MenuPanelContainer/MarginContainer/BoxContainer/TitleMargin/TitleLabel")
 ScoreLabel = NodePath("MenuPanelContainer/MarginContainer/BoxContainer/ScoreSection/ScoreNumber")
 HighLabel = NodePath("MenuPanelContainer/MarginContainer/BoxContainer/HighSection/HighNumber")
-PosLabel = NodePath("MenuPanelContainer/MarginContainer/BoxContainer/PosSection/PosNumber")
+namePopup = NodePath("NamePopup")
 options_packed_scene = ExtResource("3_f4fkh")
 main_menu_scene = "uid://dfdopk44gmqef"
 checkConfirmation = false
@@ -143,29 +144,6 @@ theme_override_font_sizes/font_size = 25
 text = "000"
 horizontal_alignment = 2
 
-[node name="PosSection" type="BoxContainer" parent="MenuPanelContainer/MarginContainer/BoxContainer"]
-layout_mode = 2
-alignment = 1
-
-[node name="Label" type="Label" parent="MenuPanelContainer/MarginContainer/BoxContainer/PosSection"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 25
-text = "Position"
-
-[node name="Label3" type="Label" parent="MenuPanelContainer/MarginContainer/BoxContainer/PosSection"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 25
-text = "--------------------------------"
-horizontal_alignment = 1
-clip_text = true
-
-[node name="PosNumber" type="Label" parent="MenuPanelContainer/MarginContainer/BoxContainer/PosSection"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 25
-text = "000"
-horizontal_alignment = 2
-
 [node name="MiniLeaderboard" type="MarginContainer" parent="MenuPanelContainer/MarginContainer/BoxContainer" node_paths=PackedStringArray("scrollContainer", "scoreItemContainer", "messageLabel", "messageContainer")]
 layout_mode = 2
 size_flags_vertical = 3
@@ -183,6 +161,8 @@ layout_mode = 2
 [node name="ScrollContainer" type="ScrollContainer" parent="MenuPanelContainer/MarginContainer/BoxContainer/MiniLeaderboard/BoxContainer"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
+size_flags_horizontal = 3
+horizontal_scroll_mode = 0
 
 [node name="BoxContainer" type="BoxContainer" parent="MenuPanelContainer/MarginContainer/BoxContainer/MiniLeaderboard/BoxContainer/ScrollContainer"]
 layout_mode = 2
@@ -259,6 +239,7 @@ expand_icon = true
 [node name="ConfirmRestart" type="ConfirmationDialog" parent="."]
 unique_name_in_owner = true
 auto_translate_mode = 1
+size = Vector2i(200, 110)
 dialog_text = "Restart the game?"
 
 [node name="ConfirmMainMenu" type="ConfirmationDialog" parent="."]
@@ -272,6 +253,9 @@ auto_translate_mode = 1
 size = Vector2i(200, 110)
 dialog_text = "Quit the game?"
 
+[node name="NamePopup" parent="." instance=ExtResource("10_vl7g0")]
+visible = false
+
 [connection signal="pressed" from="MenuPanelContainer/MarginContainer/BoxContainer/MiniLeaderboard/BoxContainer/BoxContainer2/Up" to="MenuPanelContainer/MarginContainer/BoxContainer/MiniLeaderboard" method="_on_up_pressed"]
 [connection signal="pressed" from="MenuPanelContainer/MarginContainer/BoxContainer/MiniLeaderboard/BoxContainer/BoxContainer2/Down" to="MenuPanelContainer/MarginContainer/BoxContainer/MiniLeaderboard" method="_on_down_pressed"]
 [connection signal="pressed" from="MenuPanelContainer/MarginContainer/BoxContainer/MenuButtonsMargin/MenuButtons/OptionsButton" to="." method="_on_options_button_pressed"]
@@ -280,3 +264,4 @@ dialog_text = "Quit the game?"
 [connection signal="confirmed" from="ConfirmRestart" to="." method="_on_confirm_restart_confirmed"]
 [connection signal="confirmed" from="ConfirmMainMenu" to="." method="_on_confirm_main_menu_confirmed"]
 [connection signal="confirmed" from="ConfirmExit" to="." method="_on_confirm_exit_confirmed"]
+[connection signal="playerNameSubmitted" from="NamePopup" to="." method="_on_name_popup_player_name_submitted"]
