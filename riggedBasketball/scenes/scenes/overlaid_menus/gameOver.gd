@@ -43,9 +43,10 @@ func returnStringWithZeroes(num:int):
 
 
 func _on_name_popup_player_name_submitted(name: String) -> void:
-	if await SilentWolf.Scores.get_top_score_by_player(name).sw_top_player_score_complete is not Dictionary:
+	var experimentation = await SilentWolf.Scores.get_top_score_by_player(name).sw_top_player_score_complete
+	if experimentation.has("error"):
 		Config.set_config(&'GameSettings',"playername",name)
-		
+		print("name saved, saving score")
 		SilentWolf.Scores.save_score(name, namePopup.score)
 	else:
 		namePopup.show()

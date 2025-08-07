@@ -12,7 +12,7 @@ texture_margin_bottom = 11.0
 region_rect = Rect2(485, 310, 100, 100)
 
 [node name="NamePopup" type="AcceptDialog" node_paths=PackedStringArray("lineedit")]
-title = "Name already in use"
+title = "Submit Score"
 initial_position = 1
 size = Vector2i(250, 179)
 visible = true
