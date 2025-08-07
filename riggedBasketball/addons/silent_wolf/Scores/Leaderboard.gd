@@ -18,8 +18,11 @@ var max_scores = 1000
 
 
 func _ready():
-	print("SilentWolf.Scores.leaderboards: " + str(SilentWolf.Scores.leaderboards))
-	print("SilentWolf.Scores.ldboard_config: " + str(SilentWolf.Scores.ldboard_config))
+	add_loading_scores_message()
+	clear_leaderboard()
+	await SilentWolf.Scores.get_scores(0).sw_get_scores_complete
+	#print("SilentWolf.Scores.leaderboards: " + str(SilentWolf.Scores.leaderboards))
+	#print("SilentWolf.Scores.ldboard_config: " + str(SilentWolf.Scores.ldboard_config))
 	var scores = SilentWolf.Scores.scores
 	#var scores = []
 	if ld_name in SilentWolf.Scores.leaderboards:
@@ -28,6 +31,7 @@ func _ready():
 	
 	if len(scores) > 0: 
 		render_board(scores, local_scores)
+		hide_message()
 	else:
 		# use a signal to notify when the high scores have been returned, and show a "loading" animation until it's the case...
 		add_loading_scores_message()
@@ -52,7 +56,6 @@ func render_board(scores: Array, local_scores: Array) -> void:
 	else:
 		for score in all_scores:
 			add_item(score.player_name, str(int(score.score)))
-	
 	
 
 
@@ -120,17 +123,12 @@ func hide_message() -> void:
 
 func clear_leaderboard() -> void:
 	var score_item_container = scoreItemContainer
+	list_index = 0
 	if score_item_container.get_child_count() > 0:
 		var children = score_item_container.get_children()
 		for c in children:
 			score_item_container.remove_child(c)
 			c.queue_free()
-
-
-
-
-func value_changed(value:float):
-	print(value)
 
 
 func _on_up_pressed() -> void:
@@ -139,3 +137,6 @@ func _on_up_pressed() -> void:
 
 func _on_down_pressed() -> void:
 	scrollContainer.scroll_vertical += scrollStep
+
+func refresh() -> void:
+	_ready()

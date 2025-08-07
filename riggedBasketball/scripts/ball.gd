@@ -70,7 +70,8 @@ func on_game_missed_goal() -> void:
 	if !failedToScore:
 		set_deferred("freeze", true)
 		var tween = self.create_tween()
-		tween.tween_property($Sprite, "scale", Vector2(0.15,0.15), 0.1)
-		tween.tween_property($Sprite, "modulate", Color.TRANSPARENT, 0.05)
+		tween.set_parallel(true)
+		tween.tween_property($Sprite, "scale", Vector2(0,0), 0.3)
+		tween.tween_property($Sprite, "modulate", Color.TRANSPARENT, 0.3)
 		tween.tween_callback(queue_free)
 		

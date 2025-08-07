@@ -4,8 +4,11 @@ extends PauseMenu
 @export var ScoreLabel : Label
 @export var HighLabel : Label
 @export var namePopup : AcceptDialog
+@export var leaderboard : LeaderboardDisplay
 var scoreText : String
 
+signal updateLeaderboard
+signal showLoading
 
 func update(score:int, high:int, newHigh:bool):
 	ScoreLabel.text = returnStringWithZeroes(score)
@@ -25,13 +28,13 @@ func update(score:int, high:int, newHigh:bool):
 		var savedHigh = await SilentWolf.Scores.get_top_score_by_player(playerName).sw_top_player_score_complete 
 		
 		if score > savedHigh:
-			SilentWolf.Scores.save_score(playerName, score)
+			emit_signal("showLoading")
+			await SilentWolf.Scores.save_score(playerName, score).sw_save_score_complete
 			
+			emit_signal("updateLeaderboard")
 	elif newHigh:
 		namePopup.show()
 		namePopup.score = score
-	
-	$MenuPanelContainer/MarginContainer/BoxContainer/MiniLeaderboard/Panel.hide()
 
 func returnStringWithZeroes(num:int):
 	if num < 10:
@@ -43,11 +46,16 @@ func returnStringWithZeroes(num:int):
 
 
 func _on_name_popup_player_name_submitted(name: String) -> void:
+	emit_signal("showLoading")
+	
 	var experimentation = await SilentWolf.Scores.get_top_score_by_player(name).sw_top_player_score_complete
 	if experimentation.has("error"):
 		Config.set_config(&'GameSettings',"playername",name)
 		print("name saved, saving score")
-		SilentWolf.Scores.save_score(name, namePopup.score)
+		
+		await SilentWolf.Scores.save_score(name, namePopup.score).sw_save_score_complete
+		
+		emit_signal("updateLeaderboard")
 	else:
 		namePopup.show()
 		namePopup.title = "Name already in use"

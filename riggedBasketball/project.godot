@@ -34,7 +34,7 @@ window/stretch/aspect="keep_height"
 [editor]
 
 movie_writer/movie_file="/Users/gadi/Movies/riggedbasketball.avi"
-movie_writer/fps=120
+movie_writer/fps=140
 
 [editor_plugins]
 

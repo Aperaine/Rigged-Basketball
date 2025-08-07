@@ -14,7 +14,7 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a5rjv"]
 bg_color = Color(0.08, 0.08, 0.08, 0.682353)
 
-[node name="GameOverScreen" type="Control" node_paths=PackedStringArray("TitleLabel", "ScoreLabel", "HighLabel", "namePopup")]
+[node name="GameOverScreen" type="Control" node_paths=PackedStringArray("TitleLabel", "ScoreLabel", "HighLabel", "namePopup", "leaderboard")]
 process_mode = 3
 layout_mode = 3
 anchors_preset = 15
@@ -27,6 +27,7 @@ TitleLabel = NodePath("MenuPanelContainer/MarginContainer/BoxContainer/TitleMarg
 ScoreLabel = NodePath("MenuPanelContainer/MarginContainer/BoxContainer/ScoreSection/ScoreNumber")
 HighLabel = NodePath("MenuPanelContainer/MarginContainer/BoxContainer/HighSection/HighNumber")
 namePopup = NodePath("NamePopup")
+leaderboard = NodePath("MenuPanelContainer/MarginContainer/BoxContainer/MiniLeaderboard")
 options_packed_scene = ExtResource("3_f4fkh")
 main_menu_scene = "uid://dfdopk44gmqef"
 checkConfirmation = false
@@ -256,6 +257,8 @@ dialog_text = "Quit the game?"
 [node name="NamePopup" parent="." instance=ExtResource("10_vl7g0")]
 visible = false
 
+[connection signal="showLoading" from="." to="MenuPanelContainer/MarginContainer/BoxContainer/MiniLeaderboard" method="add_loading_scores_message"]
+[connection signal="updateLeaderboard" from="." to="MenuPanelContainer/MarginContainer/BoxContainer/MiniLeaderboard" method="refresh"]
 [connection signal="pressed" from="MenuPanelContainer/MarginContainer/BoxContainer/MiniLeaderboard/BoxContainer/BoxContainer2/Up" to="MenuPanelContainer/MarginContainer/BoxContainer/MiniLeaderboard" method="_on_up_pressed"]
 [connection signal="pressed" from="MenuPanelContainer/MarginContainer/BoxContainer/MiniLeaderboard/BoxContainer/BoxContainer2/Down" to="MenuPanelContainer/MarginContainer/BoxContainer/MiniLeaderboard" method="_on_down_pressed"]
 [connection signal="pressed" from="MenuPanelContainer/MarginContainer/BoxContainer/MenuButtonsMargin/MenuButtons/OptionsButton" to="." method="_on_options_button_pressed"]

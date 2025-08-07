@@ -17,7 +17,8 @@
 [ext_resource type="Texture2D" uid="uid://bs1oaxxf5am3e" path="res://assets/Background/Rigged Basketball Background Court.png" id="14_ir15t"]
 [ext_resource type="Texture2D" uid="uid://xqyxlj86kfm6" path="res://assets/Background/Rigged Basketball Background Vignette.png" id="15_ir15t"]
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_yqjtg"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ca42v"]
+size = Vector2(2808, 332)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_dinhu"]
 
@@ -65,14 +66,15 @@ maxSpeed = 600
 
 [node name="Floor" type="Area2D" parent="."]
 position = Vector2(0, 550)
-priority = 1
 script = ExtResource("2_lbhrr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
-shape = SubResource("WorldBoundaryShape2D_yqjtg")
+position = Vector2(252, 156)
+shape = SubResource("RectangleShape2D_ca42v")
 
 [node name="OutDetector" type="Area2D" parent="."]
 position = Vector2(0, 256)
+priority = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="OutDetector"]
 shape = SubResource("WorldBoundaryShape2D_dinhu")

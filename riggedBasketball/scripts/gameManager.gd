@@ -11,6 +11,10 @@ signal missedGoal
 signal gameOverSignal
 
 func _ready() -> void:
+	push_warning("Remove this before export")
+	Config.set_config(&'GameSettings', "high", 0)
+	Config.set_config(&'GameSettings', "playername", "�")
+	
 	active = true
 	
 	score_label.text = str(score)
