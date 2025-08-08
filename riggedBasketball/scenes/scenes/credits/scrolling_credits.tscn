@@ -14,30 +14,53 @@ custom_minimum_size = Vector2(0, 480)
 
 [node name="CreditsLabel" parent="ScrollContainer/VBoxContainer" index="1"]
 custom_minimum_size = Vector2(640, 0)
-text = "[center][font_size=48]Collaborators[/font_size]
+text = "[center]
+[font_size=64]Made by [url=https://aperaine.itch.io]Aperaine[/url]  [/font_size]
 
-[font_size=32]Role[/font_size]
-Person 1  
-Person 2  
-[url=https://aperaine.itch.io]Aperaine[/url]  
 
 [font_size=48]Sourced[/font_size]
-[font_size=32]Sprites[/font_size]
+[font_size=32]Game Assets[/font_size]
 [font_size=24]Basketball with basketbball board and net illustration[/font_size]
-Author: [url=]brgfx[/url]  
-Source: [url=https://www.freepik.com/free-vector/basketball-with-basketball-board-net-illustration_1138559.htm#fromView=search&page=1&position=29&uuid=269afbf1-d82b-4f2f-bdcd-03a3209437d2&query=basketball+hoop]Domain : Freepik[/url]  
-License: [url=]License: Free[/url]
+Author: brgfx
+Source: [url=https://www.freepik.com/free-vector/basketball-with-basketball-board-net-illustration_1138559.htm#fromView=search&page=1&position=29&uuid=269afbf1-d82b-4f2f-bdcd-03a3209437d2&query=basketball+hoop]Freepik[/url]  
+License: CC0
 
 [font_size=24]Vector image of basketball ball[/font_size]
-Author: [url=]OpenClipart[/url]
-Source: [url=https://freesvg.org/vector-image-of-basketball-ball]Domain: Free SVG[/url]
-Liscence: [url=]Public Domain[/url]
+Author: OpenClipart
+Source: [url=https://freesvg.org/vector-image-of-basketball-ball]Free SVG[/url]
+Licence: Public Domain
 
+[font_size=24]UI Textures, Button sounds, Icons[/font_size]
+Author: KENNY (peak)
+Source: [url=https://kenney.nl/]Website[/url]
+Licence: CC0
 
-[font_size=24]Godot Engine Logo[/font_size]
-Author: Andrea Calabró  
-Source: [url=https://godotengine.org/press/]godotengine.org : press[/url]  
-License: [url=https://github.com/godotengine/godot/blob/master/LOGO_LICENSE.txt]CC BY 4.0 International[/url] 
+[font_size=24]Compiled Kenny's UI resources[/font_size]
+Author: Azagaya
+Source: [url=https://azagaya.itch.io/]Itch.io[/url]
+Licence: Public Domain
+
+[font_size=24]Music and Basketball-Related Sound effects[/font_size]
+Authors: XtremeFreddy, freesound_community, teddybeast6
+Source: [url=https://pixabay.com/]Pixabay[/url]
+Licence: Pixabay Content Licence
+
+[font_size=24]Font[/font_size]
+Author: GGBotNet
+Source: [url=https://ggbot.itch.io/unitblock-font]Itch.io[/url]
+Licence: CC0
+
+[font_size=48]Logo Assets[/font_size]
+[font_size=32]\"Rigged\" Font: Seven segment[/font_size]
+Author: Krafti Labs
+Source: [url=https://creativemarket.com/KraftiLab/2702060-7-Segment-Display-Font?ts=201806]Creative Market[/url]
+Licence: Free for personal use
+
+[font_size=24]\"Basketball\" Font: A Attack Graffiti[/font_size]
+Author: Wep
+Source: [url=https://wepfont.com/]Wepfont[/url]
+Licence: Free for personal use
+
 
 [font_size=48]Tools[/font_size]
 [font_size=24]Godot[/font_size]
@@ -51,6 +74,24 @@ License: [url=https://github.com/godotengine/godot/blob/master/LICENSE.txt]MIT L
 Author: [url=https://github.com/Maaack/Godot-Menus-Template/graphs/contributors]Marek Belski and contributors[/url]  
 Source: [url=https://github.com/Maaack/Godot-Menus-Template]github: Godot-Menus-Template[/url]  
 License: [url=LICENSE.txt]MIT License[/url]  
+
+[font_size=24]Projectile On Curve 2D[/font_size]
+[img=80]res:///addons/ProjectileOnCurve2DPlugin/node icon.svg[/img]  
+Author: [url=https://github.com/MeroVinggen]Mero Viggen[/url]  
+Source: [url=https://github.com/MeroVinggen/Godot-ProjectileOnCurve2DPlugin]github: ProjectileOnCurve2D[/url]  
+License: [url=LICENSE.txt]MIT License[/url]  
+
+[font_size=24]SilentWolf[/font_size]
+[img=80]res://scenes/assets/silentwolf.png[/img]  
+Author: [url=https://silentwolf.com/]No idea, can't find anything online[/url]  
+Source: [url=https://silentwolf.com/]website: SilentWolf[/url]  
+License: Free use
+
+[font_size=24]Photopea[/font_size]
+[img=80]res:///scenes/assets/photopea.png[/img]  
+Author: [url=https://blog.ivank.net/about]Ivan Kutskir[/url]  
+Source: [url=https://www.photopea.com/]Photopea website[/url]  
+License: [url=LICENSE.txt]MIT License[/url] 
 
 [font_size=24]Git[/font_size]
 [img=80]res:///scenes/assets/git_logo/Git-Logo-2Color.png[/img]  

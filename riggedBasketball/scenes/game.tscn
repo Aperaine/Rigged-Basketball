@@ -20,7 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://bkcsjsk2ciff" path="res://addons/maaacks_menus_template/base/scenes/music_players/background_music_player.tscn" id="17_ssvqc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ca42v"]
-size = Vector2(2808, 332)
+size = Vector2(2808, 564)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_dinhu"]
 
@@ -71,7 +71,7 @@ position = Vector2(0, 550)
 script = ExtResource("2_lbhrr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
-position = Vector2(252, 156)
+position = Vector2(252, 272)
 shape = SubResource("RectangleShape2D_ca42v")
 
 [node name="OutDetector" type="Area2D" parent="."]

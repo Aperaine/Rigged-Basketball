@@ -25,9 +25,9 @@ func update(score:int, high:int, newHigh:bool):
 			
 	
 	if playerName != "�":
-		var savedHigh = await SilentWolf.Scores.get_top_score_by_player(playerName).sw_top_player_score_complete 
+		var savedHigh:Dictionary = await SilentWolf.Scores.get_top_score_by_player(playerName).sw_top_player_score_complete 
 		
-		if score > savedHigh:
+		if score > savedHigh.get("top_score",savedHigh).get("score",0):
 			emit_signal("showLoading")
 			await SilentWolf.Scores.save_score(playerName, score).sw_save_score_complete
 			emit_signal("updateLeaderboard")
