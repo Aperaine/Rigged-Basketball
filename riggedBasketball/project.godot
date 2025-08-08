@@ -16,6 +16,7 @@ config/version="1.0"
 run/main_scene="res://scenes/scenes/opening/opening_with_logo.tscn"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="uid://hukq6mc3hle8"
+config/windows_native_icon="res://Rigged Basketball Icon.ico"
 
 [autoload]
 
@@ -109,3 +110,4 @@ copy_path="res://scenes"
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true
