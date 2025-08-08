@@ -81,7 +81,6 @@ expand_icon = true
 script = ExtResource("4_7dnr8")
 
 [node name="MessageContainer" type="CenterContainer" parent="panc"]
-visible = false
 layout_mode = 2
 
 [node name="TextMessage" type="Label" parent="panc/MessageContainer"]
