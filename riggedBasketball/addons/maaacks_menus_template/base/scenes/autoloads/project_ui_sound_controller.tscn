@@ -1,6 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://cc37235kj4384"]
+[gd_scene load_steps=6 format=3 uid="uid://cc37235kj4384"]
 
 [ext_resource type="Script" uid="uid://b5oej1q4h7jvh" path="res://addons/maaacks_menus_template/base/scripts/ui_sound_controller.gd" id="1_dmagn"]
+[ext_resource type="AudioStream" uid="uid://cruom76h0lu3y" path="res://assets/Audio/click2.ogg" id="2_qg0v4"]
+[ext_resource type="AudioStream" uid="uid://d4b8edbjhwghf" path="res://assets/Audio/click3.ogg" id="3_wr46q"]
+[ext_resource type="AudioStream" uid="uid://cjihuhr5jaaks" path="res://assets/Audio/switch1.ogg" id="4_wr46q"]
+[ext_resource type="AudioStream" uid="uid://h5j3880ka6jl" path="res://assets/Audio/rollover2.ogg" id="5_dstkw"]
 
 [node name="ProjectUISoundController" type="Node"]
 script = ExtResource("1_dmagn")
+button_focused = ExtResource("2_qg0v4")
+button_pressed = ExtResource("3_wr46q")
+tab_changed = ExtResource("4_wr46q")
+slider_focused = ExtResource("2_qg0v4")
+slider_drag_started = ExtResource("5_dstkw")
+slider_drag_ended = ExtResource("5_dstkw")
+line_text_submitted = ExtResource("4_wr46q")
+item_list_activated = ExtResource("2_qg0v4")
