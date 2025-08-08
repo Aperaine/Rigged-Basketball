@@ -29,8 +29,7 @@ func update(score:int, high:int, newHigh:bool):
 		
 		if score > savedHigh:
 			emit_signal("showLoading")
-			#await SilentWolf.Scores.save_score(playerName, score).sw_save_score_complete
-			push_warning("Uncomment this before export")
+			await SilentWolf.Scores.save_score(playerName, score).sw_save_score_complete
 			emit_signal("updateLeaderboard")
 	elif newHigh:
 		namePopup.show()
@@ -53,8 +52,7 @@ func _on_name_popup_player_name_submitted(name: String) -> void:
 		Config.set_config(&'GameSettings',"playername",name)
 		print("name saved, saving score")
 		
-		#await SilentWolf.Scores.save_score(name, namePopup.score).sw_save_score_complete
-		push_warning("Uncomment this before export")
+		await SilentWolf.Scores.save_score(name, namePopup.score).sw_save_score_complete
 		emit_signal("updateLeaderboard")
 	else:
 		namePopup.show()
