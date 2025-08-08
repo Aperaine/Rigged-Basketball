@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://f02l7av0c05v"]
+[gd_scene load_steps=21 format=3 uid="uid://f02l7av0c05v"]
 
 [ext_resource type="Script" uid="uid://cc0p80mibgo6r" path="res://scripts/gameManager.gd" id="1_iywne"]
 [ext_resource type="PackedScene" uid="uid://6ahhekbmm04v" path="res://scenes/hoop.tscn" id="1_uwrxv"]
@@ -16,6 +16,8 @@
 [ext_resource type="Texture2D" uid="uid://by2bi4pjcndsf" path="res://assets/kenney_game-icons/PNG/White/barsHorizontal.png" id="14_ca42v"]
 [ext_resource type="Texture2D" uid="uid://bs1oaxxf5am3e" path="res://assets/Background/Rigged Basketball Background Court.png" id="14_ir15t"]
 [ext_resource type="Texture2D" uid="uid://xqyxlj86kfm6" path="res://assets/Background/Rigged Basketball Background Vignette.png" id="15_ir15t"]
+[ext_resource type="AudioStream" uid="uid://c8crk6sxx1w25" path="res://assets/Audio/game loop.ogg" id="17_rysoc"]
+[ext_resource type="PackedScene" uid="uid://bkcsjsk2ciff" path="res://addons/maaacks_menus_template/base/scenes/music_players/background_music_player.tscn" id="17_ssvqc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ca42v"]
 size = Vector2(2808, 332)
@@ -175,6 +177,10 @@ visibility_mode = 1
 unique_name_in_owner = true
 script = ExtResource("11_dinhu")
 pause_menu_packed = ExtResource("12_kvuet")
+
+[node name="BackgroundMusicPlayer" parent="." instance=ExtResource("17_ssvqc")]
+stream = ExtResource("17_rysoc")
+parameters/looping = true
 
 [connection signal="gameOverSignal" from="." to="Hoop" method="_on_game_game_over_signal"]
 [connection signal="body_entered" from="Floor" to="Floor" method="_on_body_entered"]

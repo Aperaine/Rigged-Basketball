@@ -9,6 +9,9 @@ var activeSpeed:float = 0
 @export var maxPositionX = 588
 @export var minPositionX = 52
 
+@export var swishSFX : AudioStreamPlayer
+var pitchScale := Vector2(1, 2)
+
 
 func _process(delta: float) -> void:
 	
@@ -26,7 +29,9 @@ func _on_hole_body_entered(body: RigidBody2D) -> void:
 	game.addScore()
 	body.set_collision_layer_value(2,false)
 	body.scored = true
-
+	
+	swishSFX.pitch_scale = randf_range(pitchScale.x, pitchScale.y)
+	swishSFX.play()
 
 
 func _on_game_game_over_signal() -> void:

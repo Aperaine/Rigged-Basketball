@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://6ahhekbmm04v"]
+[gd_scene load_steps=8 format=3 uid="uid://6ahhekbmm04v"]
 
 [ext_resource type="Script" uid="uid://cbemd3ha3wtgj" path="res://scripts/hoop.gd" id="1_8ufma"]
 [ext_resource type="Texture2D" uid="uid://bgid86b4g3241" path="res://assets/Backboard.svg" id="2_osnbx"]
 [ext_resource type="Texture2D" uid="uid://drq86mxfsoplx" path="res://assets/HoopBack.svg" id="4_88bej"]
 [ext_resource type="Texture2D" uid="uid://bn03f20r4nfag" path="res://assets/HoopFront.svg" id="4_es7gt"]
+[ext_resource type="AudioStream" uid="uid://iggepjmtw3p4" path="res://assets/Audio/swish.ogg" id="5_88bej"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8ufma"]
 size = Vector2(57, 5)
@@ -12,9 +13,10 @@ size = Vector2(57, 5)
 radius = 4.0
 height = 24.0
 
-[node name="Hoop" type="StaticBody2D"]
+[node name="Hoop" type="StaticBody2D" node_paths=PackedStringArray("swishSFX")]
 scale = Vector2(0.8, 0.8)
 script = ExtResource("1_8ufma")
+swishSFX = NodePath("AudioStreamPlayer")
 
 [node name="Backboard" type="Sprite2D" parent="."]
 z_index = -2
@@ -34,7 +36,6 @@ scale = Vector2(0.13577, 0.13577)
 texture = ExtResource("4_es7gt")
 
 [node name="Hole" type="Area2D" parent="."]
-visible = false
 collision_mask = 2
 priority = 2
 
@@ -49,5 +50,9 @@ shape = SubResource("CapsuleShape2D_kqfn8")
 [node name="Rim right" type="CollisionShape2D" parent="."]
 position = Vector2(50, 0)
 shape = SubResource("CapsuleShape2D_kqfn8")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_88bej")
+bus = &"SFX"
 
 [connection signal="body_entered" from="Hole" to="." method="_on_hole_body_entered"]

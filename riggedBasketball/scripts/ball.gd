@@ -15,6 +15,9 @@ var yAfterPos:float
 
 var failedToScore:bool = false
 
+var pitchScale := Vector2(1, 1.5)
+@export var bounceSFX : AudioStreamPlayer
+
 
 func _ready() -> void:
 	freeze = true
@@ -75,3 +78,8 @@ func on_game_missed_goal() -> void:
 		tween.tween_property($Sprite, "modulate", Color.TRANSPARENT, 0.3)
 		tween.tween_callback(queue_free)
 		
+
+
+func _on_body_entered(_body: Node) -> void:
+	bounceSFX.pitch_scale = randf_range(pitchScale.x, pitchScale.y)
+	bounceSFX.play()

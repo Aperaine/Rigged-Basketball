@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cldexln4udev1"]
+[gd_scene load_steps=7 format=3 uid="uid://cldexln4udev1"]
 
 [ext_resource type="Script" uid="uid://dt8c71wxmy2j6" path="res://scripts/ball.gd" id="1_f7cbr"]
 [ext_resource type="Texture2D" uid="uid://dgatas2vwm0ds" path="res://assets/basketball.svg" id="2_f7cbr"]
 [ext_resource type="Script" uid="uid://bdnl6uuwlfjme" path="res://addons/ProjectileOnCurve2DPlugin/ProjectileOnCurve2D.gd" id="3_f7cbr"]
+[ext_resource type="AudioStream" uid="uid://qub3i3tw1slt" path="res://assets/Audio/rim-bounce.ogg" id="4_4dx81"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_f7cbr"]
 bounce = 1.0
@@ -10,13 +11,14 @@ bounce = 1.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_4dx81"]
 radius = 17.0294
 
-[node name="Ball" type="RigidBody2D"]
+[node name="Ball" type="RigidBody2D" node_paths=PackedStringArray("bounceSFX")]
 z_index = 1
 collision_layer = 3
 physics_material_override = SubResource("PhysicsMaterial_f7cbr")
 contact_monitor = true
-max_contacts_reported = 100
+max_contacts_reported = 5
 script = ExtResource("1_f7cbr")
+bounceSFX = NodePath("AudioStreamPlayer")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 scale = Vector2(0.1, 0.1)
@@ -29,3 +31,10 @@ disabled = true
 [node name="ProjectileOnCurve2D" type="Node2D" parent="."]
 script = ExtResource("3_f7cbr")
 metadata/_custom_type_script = "uid://bdnl6uuwlfjme"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_4dx81")
+volume_db = -9.0
+bus = &"SFX"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

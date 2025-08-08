@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cta8in2m27tk6"
-path="res://.godot/imported/node icon.svg-63a375a500ab7090f8684b9031b42e73.ctex"
+uid="uid://e4wx2m4yu4s3"
+path="res://.godot/imported/silentwolf.png-b501ba8ead5889f6a06ffcceecb167d1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/ProjectileOnCurve2DPlugin/node icon.svg"
-dest_files=["res://.godot/imported/node icon.svg-63a375a500ab7090f8684b9031b42e73.ctex"]
+source_file="res://scenes/assets/silentwolf.png"
+dest_files=["res://.godot/imported/silentwolf.png-b501ba8ead5889f6a06ffcceecb167d1.ctex"]
 
 [params]
 
@@ -32,6 +32,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=4.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false
