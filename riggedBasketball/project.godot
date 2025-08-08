@@ -11,9 +11,11 @@ config_version=5
 [application]
 
 config/name="Rigged Basketball"
+config/description="Cheat your way through a basketball game by moving the hoop left and right to catch the throws of you terrible teammates."
+config/version="1.0"
 run/main_scene="res://scenes/scenes/opening/opening_with_logo.tscn"
 config/features=PackedStringArray("4.4", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="uid://hukq6mc3hle8"
 
 [autoload]
 
