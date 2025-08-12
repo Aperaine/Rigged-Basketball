@@ -65,7 +65,7 @@ option_name = "Touch buttons opacity"
 option_section = 1
 key = "TouchButtonsOpacity"
 section = "InputSettings"
-default_value = 3.0
+default_value = 4.0
 
 [node name="OptionLabel" parent="VBoxContainer/MarginContainer/VBoxContainer/JoypadSensitivityControl2" index="0"]
 text = "Touch buttons opacity :"
@@ -73,7 +73,7 @@ text = "Touch buttons opacity :"
 [node name="HSlider" parent="VBoxContainer/MarginContainer/VBoxContainer/JoypadSensitivityControl2" index="1"]
 max_value = 7.0
 step = 1.0
-value = 5.0
+value = 4.0
 tick_count = 8
 
 [editable path="VBoxContainer/MarginContainer/VBoxContainer/MouseSensitivityControl"]

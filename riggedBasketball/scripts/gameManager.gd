@@ -12,10 +12,9 @@ signal gameOverSignal
 
 func _ready() -> void:
 	active = true
-	
 	score_label.text = str(score)
-	touch_screen.modulate.a = Config.get_config(AppSettings.INPUT_SECTION,"TouchButtonsOpacity", 3) / 7
-
+	touch_screen.modulate.a = float(Config.get_config(AppSettings.INPUT_SECTION,"TouchButtonsOpacity", 4)) / 7
+	
 
 ## Add an amount to the score
 func addScore(amount:int = 1):
@@ -33,6 +32,8 @@ func missed():
 	$Thrower.active = false
 
 func gameOver():
+	if active:
+		return
 	emit_signal("gameOverSignal")
 	$GUI.visible = false
 	
