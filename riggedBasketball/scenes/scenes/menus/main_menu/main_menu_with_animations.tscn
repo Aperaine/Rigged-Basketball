@@ -450,7 +450,7 @@ offset_left = -88.0
 offset_top = -26.0
 grow_horizontal = 0
 grow_vertical = 0
-text = "v1.2"
+text = "v1.3"
 horizontal_alignment = 2
 script = ExtResource("6_oxbot")
 
@@ -561,7 +561,6 @@ grow_vertical = 2
 icon = ExtResource("11_tvcgf")
 icon_alignment = 1
 expand_icon = true
-script = ExtResource("10_vn5r6")
 
 [node name="MenuButtonsBoxContainer" type="BoxContainer" parent="MenuContainer/MenuButtonsMargin/MenuButtonsContainer"]
 unique_name_in_owner = true
