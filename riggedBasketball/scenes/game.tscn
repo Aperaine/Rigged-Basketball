@@ -73,7 +73,7 @@ script = ExtResource("2_lbhrr")
 shape = SubResource("WorldBoundaryShape2D_ssvqc")
 
 [node name="OutDetector" type="Area2D" parent="."]
-position = Vector2(0, 256)
+position = Vector2(0, 300)
 priority = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="OutDetector"]
