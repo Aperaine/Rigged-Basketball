@@ -231,6 +231,7 @@ script = ExtResource("3_wrn8b")
 
 [node name="MainMenuButton" type="Button" parent="MenuPanelContainer/MarginContainer/BoxContainer/MenuButtonsMargin/MenuButtons"]
 unique_name_in_owner = true
+visible = false
 custom_minimum_size = Vector2(55, 55)
 layout_mode = 2
 icon = ExtResource("5_ha70d")
