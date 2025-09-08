@@ -4,7 +4,7 @@
 // Incrementing CACHE_VERSION will kick off the install event and force
 // previously cached resources to be updated from the network.
 /** @type {string} */
-const CACHE_VERSION = '1757159947|1586176245';
+const CACHE_VERSION = '1757302224|46433486';
 /** @type {string} */
 const CACHE_PREFIX = 'Rigged Basketbal-sw-cache-';
 const CACHE_NAME = CACHE_PREFIX + CACHE_VERSION;
