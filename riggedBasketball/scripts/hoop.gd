@@ -20,8 +20,7 @@ func _process(delta: float) -> void:
 
 func move(delta:float):
 	var movement = Input.get_axis("moveLeft","moveRight")
-	activeSpeed = move_toward(activeSpeed, movement * maxSpeed, moveAcceleration)
-	
+	activeSpeed = move_toward(activeSpeed, movement * maxSpeed, moveAcceleration * delta * 85)
 	position.x = clamp(position.x + activeSpeed * delta, minPositionX, maxPositionX)
 
 
