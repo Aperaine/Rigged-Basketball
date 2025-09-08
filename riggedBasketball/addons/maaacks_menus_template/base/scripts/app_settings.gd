@@ -128,7 +128,7 @@ static func set_fullscreen_enabled(value : bool, window : Window) -> void:
 static func set_resolution(value : Vector2i, window : Window, update_config : bool = true) -> void:
 	if value.x == 0 or value.y == 0:
 		return
-	window.size = value
+	window.size = Vector2(640*1.2,480*1.2)
 	if update_config:
 		Config.set_config(VIDEO_SECTION, SCREEN_RESOLUTION, value)
 

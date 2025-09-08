@@ -8,7 +8,7 @@
   },
   
  "action": {
-    "default_popup": "Extension/index.html"
+    "default_popup": "index.html"
   },
 
   "browser_specific_settings": {

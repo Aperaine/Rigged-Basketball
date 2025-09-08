@@ -2,13 +2,21 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+		<meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0">
 		<title>Rigged Basketball</title>
 		<style>
 html, body, #canvas {
 	margin: 0;
 	padding: 0;
 	border: 0;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    width: 640px;   /* set desired width */
+    height: 480px;  /* set desired height */
 }
 
 body {
@@ -20,6 +28,8 @@ body {
 
 #canvas {
 	display: block;
+    width: 100%;
+    height: 100%;
 }
 
 #canvas:focus {
