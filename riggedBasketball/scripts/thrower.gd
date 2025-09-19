@@ -65,6 +65,8 @@ func awaitTimer(length:float):
 	set_process(false)
 	return
 
+
+
 func _process(_delta: float) -> void:
 	if !timer.is_stopped():
 		if get_viewport().gui_get_focus_owner():
