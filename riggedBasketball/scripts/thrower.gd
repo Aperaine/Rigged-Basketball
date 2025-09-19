@@ -42,7 +42,8 @@ func _ready() -> void:
 				timeBetweenThrows -= 0.1
 				print("Time between throws: ", timeBetweenThrows)
 		
-		await awaitTimer(timeBetweenThrows)
+		timer.start(timeBetweenThrows)
+		await timer.timeout
 
 func throw() -> void:
 	ballCount += 1
@@ -58,10 +59,3 @@ func throw() -> void:
 	ball.originalPos = position
 	ball.speed = ballSpeed
 	ballsCollection.add_child(ball)
-
-func awaitTimer(length:float):
-	timer.start(length)
-	set_process(true)
-	await timer.timeout
-	set_process(false)
-	return
