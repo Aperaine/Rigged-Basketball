@@ -28,7 +28,7 @@ func update(score:int, high:int, newHigh:bool):
 		var savedHigh:Dictionary = await SilentWolf.Scores.get_top_score_by_player(playerName).sw_top_player_score_complete 
 		
 		if score > savedHigh.get("top_score",savedHigh).get("score",0):
-			emit_signal("showLoading")
+			emit_signal("showLoading", "Saving...")
 			await SilentWolf.Scores.save_score(playerName, score).sw_save_score_complete
 			emit_signal("updateLeaderboard")
 	elif newHigh:
@@ -45,7 +45,7 @@ func returnStringWithZeroes(num:int):
 
 
 func _on_name_popup_player_name_submitted(name: String) -> void:
-	emit_signal("showLoading")
+	emit_signal("showLoading", "Saving...")
 	
 	var experimentation = await SilentWolf.Scores.get_top_score_by_player(name).sw_top_player_score_complete
 	if experimentation.has("error"):

@@ -111,9 +111,9 @@ func add_no_scores_message() -> void:
 	messageContainer.show()
 
 
-func add_loading_scores_message() -> void:
+func add_loading_scores_message(message:String = "Loading scores...") -> void:
 	var item = messageLabel
-	item.text = "Loading scores..."
+	item.text = message
 	messageContainer.show()
 
 
