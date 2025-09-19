@@ -29,7 +29,8 @@ func _ready() -> void:
 	active = true
 	rng.randomize()
 	
-	await awaitTimer(startingDelay)
+	timer.start(startingDelay)
+	await timer.timeout
 	while active:
 		throw()
 		
@@ -64,14 +65,3 @@ func awaitTimer(length:float):
 	await timer.timeout
 	set_process(false)
 	return
-
-
-
-func _process(_delta: float) -> void:
-	if !timer.is_stopped():
-		if get_viewport().gui_get_focus_owner():
-			timer.set_paused(true)
-			set_process(false)
-			await %"Pause Menu".unpaused
-			timer.set_paused(false)
-			set_process(true)
