@@ -8,7 +8,7 @@ extends PauseMenu
 var scoreText : String
 
 signal updateLeaderboard
-signal showLoading
+signal showLoading(text:String)
 
 func update(score:int, high:int, newHigh:bool):
 	ScoreLabel.text = returnStringWithZeroes(score)
