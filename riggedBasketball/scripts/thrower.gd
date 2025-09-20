@@ -1,35 +1,28 @@
 extends Node2D
-
 @export var active:bool
-
 @export_category("Locations")
 @export var targetBoundaryL:Vector2 = Vector2(40,150)
 @export var targetBoundaryR:Vector2 = Vector2(600,200)
 @export var throwBoundaryL:int = 20
 @export var throwBoundaryR:int = 620
 var target:Vector2
-
 var rng = RandomNumberGenerator.new()
-
 @export_category("Timers")
 @export var startingDelay: int = 2
 @export var timeBetweenThrows:float = 3
 @export var minimumTimeBetweenThrows:int = 1
 @onready var timer: Timer = $Timer
-
-
 const ballScene = preload("res://scenes/ball.tscn")
 @onready var ballsCollection: Node = $"../Balls"
 var ballCount:int = 0
-
 var ballSpeed = 3
-
 func _ready() -> void:
 	set_process(false)
 	active = true
 	rng.randomize()
 	
-	await awaitTimer(startingDelay)
+	timer.start(startingDelay)
+	await timer.timeout
 	while active:
 		throw()
 		
@@ -40,8 +33,9 @@ func _ready() -> void:
 			if timeBetweenThrows > minimumTimeBetweenThrows:
 				timeBetweenThrows -= 0.1
 				print("Time between throws: ", timeBetweenThrows)
-		
-		await awaitTimer(timeBetweenThrows)
+
+		timer.start(timeBetweenThrows)
+		await timer.timeout
 
 func throw() -> void:
 	ballCount += 1
@@ -57,19 +51,3 @@ func throw() -> void:
 	ball.originalPos = position
 	ball.speed = ballSpeed
 	ballsCollection.add_child(ball)
-
-func awaitTimer(length:float):
-	timer.start(length)
-	set_process(true)
-	await timer.timeout
-	set_process(false)
-	return
-
-func _process(_delta: float) -> void:
-	if !timer.is_stopped():
-		if get_viewport().gui_get_focus_owner():
-			timer.set_paused(true)
-			set_process(false)
-			await %"Pause Menu".unpaused
-			timer.set_paused(false)
-			set_process(true)
