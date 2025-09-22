@@ -1,0 +1,17 @@
+start = esc
+guide = esc
+
+a = enter
+b = esc
+x = enter
+y = esc
+
+up = up
+down = down
+left = left
+right = right
+
+left_analog_up = w
+left_analog_down = s
+left_analog_left = a
+left_analog_right = d
