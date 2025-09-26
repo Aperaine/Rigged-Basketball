@@ -31,7 +31,7 @@ func _ready() -> void:
 	
 	var tween = self.create_tween()
 	
-	var spriteSize = randf_range(0.15,0.3)
+	var spriteSize = randf_range(0.15,0.4)
 	$Sprite.scale = Vector2(spriteSize, spriteSize)
 	tween.tween_property($Sprite, "scale", Vector2(0.1,0.1), 0.7)
 

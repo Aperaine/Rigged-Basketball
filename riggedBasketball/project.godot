@@ -16,7 +16,7 @@ config/version="1.4"
 run/main_scene="uid://f02l7av0c05v"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 boot_splash/bg_color=Color(0.145098, 0.282353, 0.392157, 1)
-boot_splash/image="uid://hukq6mc3hle8"
+boot_splash/image="uid://db5wbx70wxpp1"
 config/icon="uid://hukq6mc3hle8"
 config/windows_native_icon="res://Rigged Basketball Icon.ico"
 

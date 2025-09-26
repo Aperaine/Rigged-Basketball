@@ -14,6 +14,7 @@ offset_right = 260.0
 offset_bottom = 50.0
 theme_override_font_sizes/normal_font_size = 32
 text = "1. Godzilla"
+scroll_active = false
 
 [node name="Score" type="Label" parent="."]
 layout_mode = 1
